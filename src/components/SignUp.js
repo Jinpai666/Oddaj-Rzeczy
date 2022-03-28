@@ -6,12 +6,12 @@ export default function SignUp(){
     let navigate = useNavigate()
 
     return (
-        <>
+        <div>signup page
             <Link to="/">Signup</Link>
             <Link to="login">Login</Link>
             <button onClick={()=>{navigate('/')}} >Main</button>
 
-        </>
+        </div>
     )
 
 }

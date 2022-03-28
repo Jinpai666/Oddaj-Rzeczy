@@ -1,9 +1,38 @@
 .header{
   height: 10vh;
   color: black;
+  font-family: $font-alt;
+  margin-right: 14rem;
+  margin-top: 4rem;
   &__button{
-    padding: 1em 2em;
-    border: 1px solid yellow;
+    padding: 1rem;
     text-decoration: none;
+    border: 1px solid transparent;
+    margin-bottom: 1rem;
+    color: $light-text-color;
+    &:hover{
+      border: 1px solid $accent-color;
+    }
+  }
+  &__menu-item{
+    padding: 1rem;
+    border: 1px solid transparent;
+    color: $main-text-color;
+    text-decoration: none;
+
+    &:hover{
+      border: 1px solid $main-text-color;
+    }
+  }
+  &__top{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.4rem;
+  }
+  &__bottom{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.8rem;
+    align-items: center;
   }
 }
