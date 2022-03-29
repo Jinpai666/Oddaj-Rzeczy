@@ -3,9 +3,7 @@
   font-size: 3.8rem;
   color: $main-text-color;
   text-align: center;
-  @media (max-width: 800px) {
-    font-size: 5.5vw;
-  }
+
   &::after {
     content: "";
     width: 25rem;
@@ -16,5 +14,10 @@
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 150%);
+  }
+}
+@media (max-width: 800px) {
+  .decorated-header{
+    font-size: 5.5vw;
   }
 }

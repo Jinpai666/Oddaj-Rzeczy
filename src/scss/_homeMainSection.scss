@@ -5,7 +5,9 @@
   align-items: center;
   justify-content: start;
   position: relative;
-  &__img{
+  &::before{
+    content: " ";
+    display: block;
     background-image: url("../assets/box image.png");
     width: 50%;
     height: 90rem;
@@ -15,13 +17,6 @@
   &__right-col {
     display: flex;
     justify-content: flex-end;
-  }
-
-
-  &__image {
-    height: auto;
-    max-width: 40vw;
-    object-fit: cover;
 
   }
   &__heading{
@@ -56,9 +51,6 @@
 
 @media (max-width: 800px) {
   .main-section {
-    &__img{
-      height:140vw;
-    }
     &__right-col {
       margin-right: 5vw;
     }

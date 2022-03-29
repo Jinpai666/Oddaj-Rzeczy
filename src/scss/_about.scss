@@ -1,0 +1,63 @@
+.about{
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  background-color: $background-darker-color;
+  &::after{
+    content: " ";
+    display: block;
+    background-image: url("../assets/people.png");
+    width: 50%;
+    height: 90rem;
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+  &__left-side{
+    padding-top: 18rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+  }
+  &__header{
+    width: 50%;
+    margin-bottom: 11rem;
+  }
+  &__text{
+    font-size: 3rem;
+    line-height: 5.4rem;
+    width: 80%;
+    position: relative;
+    padding-bottom: 4rem;
+    &::after{
+      content: url("../assets/signature.svg ");
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      transform: translateY(100%);
+    }
+  }
+}
+@media (max-width:1300px){
+  .about{
+    flex-direction: column;
+    align-items: center;
+    &::after{
+      width: 80%;
+      height:40rem;
+    }
+    &__left-side{
+      width: 100%;
+      padding: 7rem 0;
+    }
+    &__text{
+      font-size: 4vw;
+      width: 80%;
+      height: 30rem;
+      &::after{
+        transform: translateY(30%);
+      }
+    }
+  }
+}
