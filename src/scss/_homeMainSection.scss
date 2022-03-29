@@ -66,12 +66,18 @@
 
 @media (max-width: 800px) {
   .main-section {
+    &__img{
+      height:140vw;
+    }
     &__heading {
       font-size: 4vw;
     }
+    &__right-col {
+      margin-right: 5vw;
+    }
     &__button{
-      font-size: 3vw;
-      padding: 0.5vw 5vw;
+      font-size: 4vw;
+      padding: 1.5vw 7vw;
       line-height: 1.5;
     }
   }

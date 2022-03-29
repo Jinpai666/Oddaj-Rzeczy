@@ -1,4 +1,54 @@
 .threeCol{
   background-image: url("../assets/3 columns background.png");
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  &__col{
+    display: flex;
+    flex-direction: column;
+    max-width: 20%;
+    align-items: center;
+  }
+  &__first-row{
+    font-size: 9rem;
+    line-height: 12rem;
+    font-weight: 300;
+    margin-top: 4rem;
+  }
+  &__second-row{
+    font-size: 1.8rem;
+    line-height: 3rem;
+    margin-top: 1rem;
 
+  }
+  &__third-row{
+    font-size: 1.6rem;
+    line-height: 3rem;
+    font-weight: 300;
+    font-family: $font-alt;
+    margin-top: 3rem;
+    margin-bottom: 8rem;
+
+  }
+}
+@media (max-width: 800px) {
+  .threeCol{
+    justify-content: space-around;
+    &__first-row{
+      font-size: 14vw;
+      line-height: 12vw;
+      margin-top: 8vw;
+    }
+    &__second-row{
+      font-size: 3vw;
+      line-height: 5vw;
+      margin-top: 4vw;
+
+    }
+    &__third-row{
+      font-size: 3.8vw;
+      line-height: 5vw;
+      margin-bottom: 10vw;
+    }
+  }
 }

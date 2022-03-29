@@ -8,7 +8,7 @@ export default function SignUp(){
     return (
         <div>signup page
             <Link to="/">Signup</Link>
-            <Link to="login">Login</Link>
+            <Link to="logowanie">Login</Link>
             <button onClick={()=>{navigate('/')}} >Main</button>
 
         </div>

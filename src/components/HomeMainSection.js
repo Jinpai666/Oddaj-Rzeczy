@@ -13,8 +13,8 @@ export default function HomeMainSection(){
                 <DecoratedHeader className="main-section__heading" text={"Oddaj niechciane rzeczy w zaufane ręce"} />
 
                 <div className="main-section__button-container">
-                    <Link className="main-section__button" to="login">ODDAJ RZECZY</Link>
-                    <Link className="main-section__button" to="login">ZORGANIZUJ ZBIÓRKĘ</Link>
+                    <Link className="main-section__button" to="logowanie">ODDAJ RZECZY</Link>
+                    <Link className="main-section__button" to="logowanie">ZORGANIZUJ ZBIÓRKĘ</Link>
                 </div>
             </div>
         </section>

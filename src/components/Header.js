@@ -9,8 +9,8 @@ export default function HomeHeader(){
     return (
         <nav className="header">
             <div className="header__top">
-                <Link className="header__button" to="login">Zaloguj</Link>
-                <Link className="header__button" to="signup">Załóż Konto</Link>
+                <Link className="header__button" to="logowanie">Zaloguj</Link>
+                <Link className="header__button" to="rejestracja">Załóż Konto</Link>
             </div>
             <ul className="header__bottom">
                 <li className="header__menu-item"><ScrollLink activeClass="active" to="main" spy={true} smooth={true} offset={50} duration={500}>Start</ScrollLink></li>
