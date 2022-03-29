@@ -9,8 +9,8 @@ export default function HomeMainSection(){
         <section id="main" className="main-section">
             <div className="main-section__img"></div>
             <div className="main-section__right-col">
-                <h1 className="heading">Zacznij pomagać!</h1>
-                <DecoratedHeader styling={"heading main-section__heading-bottom"} text={"Oddaj niechciane rzeczy w zaufane ręce"} />
+                <h1 className="main-section__heading">Zacznij pomagać!</h1>
+                <DecoratedHeader styling={"main-section__heading-bottom"} text={"Oddaj niechciane rzeczy w zaufane ręce"} />
 
                 <div className="main-section__button-container">
                     <LargeButton linkTo={"logowanie"}  text={"ODDAJ RZECZY"} />

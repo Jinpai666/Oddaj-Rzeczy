@@ -24,7 +24,12 @@
     object-fit: cover;
 
   }
+  &__heading{
+    font-size: 3.8rem;
+    color: $main-text-color;
+    text-align: center;
 
+  }
   &__right-col {
     display: flex;
     flex-direction: column;
@@ -57,6 +62,8 @@
     &__right-col {
       margin-right: 5vw;
     }
-
+    &__heading{
+      font-size: 4vw;
+    }
   }
 }

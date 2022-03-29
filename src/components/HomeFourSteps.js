@@ -1,8 +1,9 @@
 import React from "react";
+import DecoratedHeader from "./DecoratedHeader";
 
 
 export default function HomeFourSteps(){
     return (
-        <div>Four Steps</div>
+        <DecoratedHeader text={"Wystarczą 4 proste kroki"} />
     )
 }
