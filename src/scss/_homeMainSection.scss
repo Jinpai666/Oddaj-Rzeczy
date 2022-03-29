@@ -33,29 +33,14 @@
     margin-top: 7rem;
   }
 
-  &__heading {
-    font-size: 3.8rem;
-    color: $main-text-color;
-    text-align: center;
 
+  &__heading-bottom{
+    margin-bottom: 10rem;
   }
 
-  &__button {
-    font-size: 3.6rem;
-    text-decoration: none;
-    color: $main-text-color;
-    font-weight: 300;
-    line-height: 4.5rem;
-    border: 1px solid  $main-text-color;;
-    padding: 1rem 9rem;
-    width: 3em;
-    display: flex;
-    text-align: center;
-    justify-content: center;
 
-  }
   &__button-container{
-    margin-top: 10rem;
+
     display: flex;
     gap: 5rem;
 
@@ -69,16 +54,9 @@
     &__img{
       height:140vw;
     }
-    &__heading {
-      font-size: 4vw;
-    }
     &__right-col {
       margin-right: 5vw;
     }
-    &__button{
-      font-size: 4vw;
-      padding: 1.5vw 7vw;
-      line-height: 1.5;
-    }
+
   }
 }

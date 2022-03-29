@@ -5,6 +5,8 @@
 @import "homeMainSection";
 @import "homeThreeColumns";
 @import "decoratedHeader";
+@import "heading";
+@import "largeButton";
 
 html {
   font-size: 62.5%; /* font-size 1em = 10px on default browser settings */
@@ -14,3 +16,6 @@ body{
   box-sizing: border-box;
   position: relative;
 }
+
+
+

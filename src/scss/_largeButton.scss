@@ -1,0 +1,19 @@
+.large-button {
+  font-size: 3.6rem;
+  text-decoration: none;
+  color: $main-text-color;
+  font-weight: 300;
+  line-height: 4.5rem;
+  border: 1px solid  $main-text-color;;
+  padding: 1rem 9rem;
+  width: 3em;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  text-transform: uppercase;
+  @media (max-width: 800px) {
+    font-size: 4vw;
+    padding: 1.5vw 7vw;
+    line-height: 1.5;
+  }
+}
