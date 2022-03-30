@@ -15,8 +15,8 @@ export default function HomeHeader(){
             <ul className="header__bottom">
                 <li className="header__menu-item"><ScrollLink activeClass="active" to="main" spy={true} smooth={true} offset={50} duration={500}>Start</ScrollLink></li>
                 <li className="header__menu-item"><ScrollLink activeClass="active" to="threeCol" spy={true} smooth={true} offset={50} duration={500}>O co chodzi?</ScrollLink></li>
-                <li className="header__menu-item"><ScrollLink activeClass="active" to="about" spy={true} smooth={true} offset={50} duration={500}>O nas</ScrollLink></li>
-                <li className="header__menu-item"><ScrollLink activeClass="active" to="groups" spy={true} smooth={true} offset={50} duration={500}>Fundacje i organizacje</ScrollLink></li>
+                <li className="header__menu-item"><ScrollLink activeClass="active" to="about-us" spy={true} smooth={true} offset={50} duration={500}>O nas</ScrollLink></li>
+                <li className="header__menu-item"><ScrollLink activeClass="active" to="help" spy={true} smooth={true} offset={50} duration={500}>Fundacje i organizacje</ScrollLink></li>
                 <li className="header__menu-item"><ScrollLink activeClass="active" to="contact" spy={true} smooth={true} offset={50} duration={500}>Kontakt</ScrollLink></li>
             </ul>
         </nav>

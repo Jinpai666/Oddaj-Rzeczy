@@ -46,6 +46,7 @@
     &::after{
       width: 80%;
       height:40rem;
+      background-size: cover;
     }
     &__left-side{
       width: 100%;
@@ -56,7 +57,7 @@
       width: 80%;
       height: 30rem;
       &::after{
-        transform: translateY(30%);
+        transform: translateY(50%);
       }
     }
   }
