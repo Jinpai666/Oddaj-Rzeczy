@@ -1,0 +1,11 @@
+[
+  {"id": 1, "name": "Dbam o Zdrowie","goals": "Pomoc osobom znajdującym się w trudnej sytuacji życiowej","items": "ubrania, jedzenie, sprzęt AGD, meble, zabawki"},
+  {"id": 2, "name": "Dla dzieci","goals": "Pomoc dzieciom z ubogich rodzin","items": "ubrania, meble, zabawki"},
+  {"id": 3, "name": "Bez domu","goals": "Pomoc dla osób nie posiadających miejsca zamieszkania","items": "ubrania, jedznie, ciepłe koce" },
+  {"id": 4, "name": "Lorem ip1","goals": "Some text for foundation1.","items": "item1, item2, item3" },
+  {"id": 5, "name": "Lorem ip2","goals": "Some text for foundation2.","items": "item4, item5, item6" },
+  {"id": 6, "name": "Lorem ip3","goals": "Some text for foundation3.","items": "item7, item8, item9" },
+  {"id": 7, "name": "Lorem ip4","goals": "Some text for foundation4.","items": "item10, item11, item12" },
+  {"id": 8, "name": "Lorem ip5","goals": "Some text for foundation5.","items": "item13, item14, item15" },
+  {"id": 9, "name": "Lorem ip6","goals": "Some text for foundation6.","items": "item14, item17, item18" }
+]
