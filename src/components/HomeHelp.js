@@ -9,16 +9,19 @@ export default function HomeHelp(){
     //change collection
     const [clicked, setClicked] = useState('Fundacjom')
     const [dataJson, setDataJson] = useState(Foundations)
-    const handleClick = (e) => {
-        const collection = e.target.innerHTML;
-        setClicked(collection);
+    const strings = {
+        foundations: "Fundacjom",
+        organisations: "Organizacjom pozarządowym",
+        locals: "Lokalnym zbiórkom"
     }
+
+
     useEffect(() =>{
-        if (clicked==="Fundacjom"){
+        if (clicked===strings.foundations){
             setDataJson(Foundations)
-        }else if(clicked==="Lokalnym zbiórkom"){
+        }else if(clicked===strings.locals){
             setDataJson(Local)
-        }else if(clicked==="Organizacjom pozarządowym"){
+        }else if(clicked===strings.organisations){
             setDataJson(Organisations)
         }
     }, [clicked, dataJson])
@@ -26,6 +29,10 @@ export default function HomeHelp(){
     const [pageNr, setPageNr] = useState(0);
     const groupsPerPage = 3;
     const pagesVisited = pageNr * groupsPerPage;
+    const pageCount = Math.ceil(dataJson.length / groupsPerPage);
+    const changePage = ({selected}) => {
+        setPageNr(selected)
+    }
     //foundations
     const displayFoundations = dataJson.slice(pagesVisited, pagesVisited + groupsPerPage).map(group => {
         return (
@@ -62,9 +69,11 @@ export default function HomeHelp(){
             </div>
         );
     });
-    const pageCount = Math.ceil(dataJson.length / groupsPerPage);
-    const changePage = ({selected}) => {
-        setPageNr(selected)
+    //handle group selection
+    const handleClick = (e, name) => {
+        setClicked(name);
+        setPageNr(0);
+
     }
 
 
@@ -72,35 +81,35 @@ export default function HomeHelp(){
         <section id="help" className="help">
             <DecoratedHeader styling={"help__header"} text={"Komu pomagamy?"} />
             <div className="help__buttons">
-                <div
-                    onClick={handleClick}
+                <h3
+                    onClick={e => handleClick(e, strings.foundations)}
                     className="help__button"
-                    style={clicked==="Fundacjom" ? {border:"1px solid #1A1818"} : {}}
+                    style={clicked===strings.foundations ? {border:"1px solid #1A1818"} : {}}
                 >Fundacjom
-                </div>
-                <div
-                    onClick={handleClick}
+                </h3>
+                <h3
+                    onClick={e => handleClick(e, strings.organisations)}
                     className="help__button"
-                    style={clicked==="Organizacjom pozarządowym" ? {border:"1px solid #1A1818"} : {}}
+                    style={clicked===strings.organisations ? {border:"1px solid #1A1818"} : {}}
                 >Organizacjom pozarządowym
-                </div>
-                <div
-                    onClick={handleClick}
+                </h3>
+                <h3
+                    onClick={e => handleClick(e, strings.locals)}
                     className="help__button"
-                    style={clicked==="Lokalnym zbiórkom" ? {border:"1px solid #1A1818"} : {}}
+                    style={clicked===strings.locals ? {border:"1px solid #1A1818"} : {}}
                 >Lokalnym zbiórkom
-                </div>
+                </h3>
             </div>
             {clicked==="Fundacjom" && <div className="help__text">W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
             </div>}
-            {clicked==="Organizacjom pozarządowym" && <div className="help__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+            {clicked===strings.organisations && <div className="help__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
             </div>}
-            {clicked==="Lokalnym zbiórkom" && <div className="help__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, velit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis culpa  dignissimos ea minima quos.
+            {clicked===strings.locals && <div className="help__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, velit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis culpa  dignissimos ea minima quos.
             </div>}
 
-            {clicked==="Fundacjom" && displayFoundations}
-            {clicked==="Organizacjom pozarządowym" && displayOrganisations}
-            {clicked==="Lokalnym zbiórkom" && displayLocals}
+            {clicked===strings.foundations && displayFoundations}
+            {clicked===strings.organisations && displayOrganisations}
+            {clicked===strings.locals && displayLocals}
             {dataJson.length > 3 && <ReactPaginate
                 pageCount={pageCount}
                 containerClassName="help__pagination"
@@ -108,6 +117,8 @@ export default function HomeHelp(){
                 nextClassName="help__hide-buttons"
                 onPageChange={changePage}
                 pageLinkClassName="help__pagination-button"
+                activeClassName="help__pagination-active-button"
+                forcePage={pageNr}
             />}
         </section>
     )

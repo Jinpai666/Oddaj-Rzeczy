@@ -22,6 +22,7 @@
     align-items: center;
     justify-content: center;
     border: 1px solid transparent;
+    cursor: pointer;
 
     &:hover{
       border: 1px solid $decoration-light-color;
@@ -68,11 +69,15 @@
   }
   &__pagination{
     display: flex;
+    &-active-button  a{
+      border: 1px solid $decoration-dark-color;
+    }
     &-button{
       padding: 1rem;
       border: 1px solid transparent;
       font-size: 1.8rem;
       cursor: pointer;
+      margin: 0 1rem;
 
       &:hover{
         border: 1px solid $decoration-dark-color;
