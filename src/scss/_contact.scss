@@ -1,3 +1,78 @@
 .contact{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-top: 8rem;
+  &::before{
+    content: " ";
+    display: block;
+    background-image: url("../assets/clothes_image.png");
+    width: 60%;
+    height: 90rem;
+    background-position:left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.2;
+  }
+  .contact__header{
+    margin-bottom: 11rem;
+  }
+  .contact__form{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 53rem;
+  }
+  &__first-row{
+    display: flex;
+    margin-bottom: 4rem;
+    justify-content: space-between;
+  }
+  &__label{
+    font-size:1.6rem;
+    font-weight: 600;
+    font-family: $font-base;
+  }
+  &__field{
+    display: block;
+    border: none;
+    border-bottom: 1px solid $decoration-dark-color;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    &::placeholder{
+      font-family: $font-base;
+      color: $placeholder-color;
+    }
+    &:focus{
+      outline: none;
+    }
 
+  }
+  &__message{
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    display: block;
+    width: 100%;
+    resize: none;
+    border: none;
+    border-bottom: 1px solid $decoration-dark-color;
+    margin-top: 1rem;
+    font-family: $font-base;
+    min-height: 10rem;
+    &::placeholder{
+      color: $placeholder-color;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+  &__button{
+    font-size: 1.8rem;
+    align-self: flex-end;
+    background-color: transparent;
+    padding: 1rem 5rem;
+    font-weight: 300;
+    margin-top: 15rem;
+    cursor: pointer;
+  }
 }

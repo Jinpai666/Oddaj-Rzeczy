@@ -1,0 +1,16 @@
+.footer{
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  font-size: 1.8rem;
+  z-index: 1;
+  &__header{
+
+  }
+  &__icons{
+  }
+  &__icon{
+    cursor: pointer;
+  }
+
+}
