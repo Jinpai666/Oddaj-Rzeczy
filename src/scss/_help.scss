@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height:100vh;
   &__header{
     margin: 7rem 0 12rem;
   }
@@ -93,13 +92,14 @@
   .help{
     &__text{
       max-width: unset;
-      font-size: 4vw;
+      font-size: 1.8rem;
     }
     &__buttons{
-      gap: 1rem;
+      gap: 0;
     }
     &__button{
-      font-size: 3vw;
+      font-size: 1.6rem;
+      padding: 1rem;
       width:unset;
     }
     &__text{
@@ -108,15 +108,14 @@
     &__detail{
       &-left{
         &-row-1{
-
-          font-size: 4vw;
+          font-size: 1.8rem;
         }
         &-row-2{
-          font-size: 3vw;
+          font-size: 1.8rem;
         }
       }
       &-right{
-        font-size: 3vw;
+        font-size: 1.8rem;
       }
     }
   }

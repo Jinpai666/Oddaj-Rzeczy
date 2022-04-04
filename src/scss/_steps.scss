@@ -23,7 +23,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    max-width: 10%;
+    width: 13rem;
     margin-top: 10rem;
   }
   &__paragraph-top{
@@ -99,6 +99,17 @@
       width   : 50%;  /* or 100px */
       border-bottom:1px solid $main-text-color;
       transform: translateX(50%);
+    }
+  }
+}
+@media (max-width: 800px) {
+  .steps{
+    &__row{
+      flex-wrap: wrap;
+    }
+    &__col{
+      margin-top: 10rem;
+      width: 50%;
     }
   }
 }

@@ -3,10 +3,11 @@
   display: flex;
   justify-content: space-around;
   text-align: center;
+  flex-direction: row;
   &__col{
     display: flex;
     flex-direction: column;
-    max-width: 20%;
+    width: 20%;
     align-items: center;
   }
   &__first-row{
@@ -33,7 +34,11 @@
 }
 @media (max-width: 800px) {
   .threeCol{
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    &__col{
+      width:80%;
+    }
     &__first-row{
       font-size: 14vw;
       line-height: 12vw;
