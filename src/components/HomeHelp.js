@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from "react";
+import ReactPaginate from 'react-paginate';
 import DecoratedHeader from "./DecoratedHeader";
 import Foundations from "../collections/foundations.json";
 import Organisations from "../collections/organisations.json";
 import Local from "../collections/local.json";
-import ReactPaginate from 'react-paginate';
 
 export default function HomeHelp(){
+
     //change collection
     const strings = {
         foundations: "Fundacjom",
@@ -14,8 +15,6 @@ export default function HomeHelp(){
     }
     const [clicked, setClicked] = useState(strings.foundations);
     const [dataJson, setDataJson] = useState(Foundations);
-
-
 
     useEffect(() =>{
         if (clicked===strings.foundations){
@@ -26,6 +25,7 @@ export default function HomeHelp(){
             setDataJson(Organisations)
         }
     }, [clicked, dataJson])
+
     //paginate
     const [pageNr, setPageNr] = useState(0);
     const groupsPerPage = 3;
@@ -34,6 +34,7 @@ export default function HomeHelp(){
     const changePage = ({selected}) => {
         setPageNr(selected)
     }
+
     //foundations
     const displayFoundations = dataJson.slice(pagesVisited, pagesVisited + groupsPerPage).map(group => {
         return (
@@ -46,6 +47,7 @@ export default function HomeHelp(){
             </div>
         );
     });
+
     //organisations
     const displayOrganisations = dataJson.slice(pagesVisited, pagesVisited + groupsPerPage).map(group => {
         return (
@@ -58,6 +60,7 @@ export default function HomeHelp(){
             </div>
         );
     });
+
     //locals
     const displayLocals = dataJson.slice(pagesVisited, pagesVisited + groupsPerPage).map(group => {
         return (
@@ -70,13 +73,12 @@ export default function HomeHelp(){
             </div>
         );
     });
+
     //handle group selection
     const handleClick = (e, name) => {
         setClicked(name);
         setPageNr(0);
-
     }
-
 
     return (
         <section id="help" className="help">
@@ -86,26 +88,35 @@ export default function HomeHelp(){
                     onClick={e => handleClick(e, strings.foundations)}
                     className="help__button"
                     style={clicked===strings.foundations ? {border:"1px solid #1A1818"} : {}}
-                >Fundacjom
+                >
+                    Fundacjom
                 </h3>
                 <h3
                     onClick={e => handleClick(e, strings.organisations)}
                     className="help__button"
                     style={clicked===strings.organisations ? {border:"1px solid #1A1818"} : {}}
-                >Organizacjom pozarządowym
+                >
+                    Organizacjom pozarządowym
                 </h3>
                 <h3
                     onClick={e => handleClick(e, strings.locals)}
                     className="help__button"
                     style={clicked===strings.locals ? {border:"1px solid #1A1818"} : {}}
-                >Lokalnym zbiórkom
+                >
+                    Lokalnym zbiórkom
                 </h3>
             </div>
-            {clicked===strings.foundations && <div className="help__text">W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
+            {clicked===strings.foundations && <div className="help__text">
+                W naszej bazie znajdziesz listę zweryfikowanych Fundacji,
+                z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
             </div>}
-            {clicked===strings.organisations && <div className="help__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+            {clicked===strings.organisations && <div className="help__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation.
             </div>}
-            {clicked===strings.locals && <div className="help__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, velit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis culpa  dignissimos ea minima quos.
+            {clicked===strings.locals && <div className="help__text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quibusdam, velit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis culpa  dignissimos ea minima quos.
             </div>}
 
             {clicked===strings.foundations && displayFoundations}

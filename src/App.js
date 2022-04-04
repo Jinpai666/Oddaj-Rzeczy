@@ -1,11 +1,11 @@
-import "./scss/main.scss";
-import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/Home"
-import Header from "./components/Header";
 import React from "react";
+import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Home from "./components/Home"
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import ErrorPage from "./components/ErrorPage";
+import "./scss/main.scss";
 
 function App() {
     return (

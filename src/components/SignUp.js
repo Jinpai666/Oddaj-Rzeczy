@@ -1,7 +1,6 @@
 import React from "react";
 import {Link, useNavigate} from "react-router-dom";
 
-
 export default function SignUp(){
     let navigate = useNavigate()
 
@@ -10,8 +9,6 @@ export default function SignUp(){
             <Link to="/">Signup</Link>
             <Link to="logowanie">Login</Link>
             <button onClick={()=>{navigate('/')}} >Main</button>
-
         </div>
     )
-
 }

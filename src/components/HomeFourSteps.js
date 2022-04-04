@@ -2,7 +2,6 @@ import React from "react";
 import DecoratedHeader from "./DecoratedHeader";
 import LargeButton from "./LargeButton";
 
-
 export default function HomeFourSteps(){
     return (
         <section className="steps">
@@ -27,7 +26,5 @@ export default function HomeFourSteps(){
             </div>
             <LargeButton text={"oddaj rzeczy"} linkTo={"logowanie"} />
         </section>
-
-
     )
 }

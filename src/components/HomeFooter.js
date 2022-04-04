@@ -1,7 +1,6 @@
 import React from "react";
 import { FaFacebookSquare, FaInstagram } from 'react-icons/fa'
 
-
 export default function HomeFooter(){
     return (
         <section className="footer">
