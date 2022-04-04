@@ -7,13 +7,14 @@ import ReactPaginate from 'react-paginate';
 
 export default function HomeHelp(){
     //change collection
-    const [clicked, setClicked] = useState('Fundacjom')
-    const [dataJson, setDataJson] = useState(Foundations)
     const strings = {
         foundations: "Fundacjom",
         organisations: "Organizacjom pozarządowym",
         locals: "Lokalnym zbiórkom"
     }
+    const [clicked, setClicked] = useState(strings.foundations);
+    const [dataJson, setDataJson] = useState(Foundations);
+
 
 
     useEffect(() =>{
@@ -100,7 +101,7 @@ export default function HomeHelp(){
                 >Lokalnym zbiórkom
                 </h3>
             </div>
-            {clicked==="Fundacjom" && <div className="help__text">W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
+            {clicked===strings.foundations && <div className="help__text">W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
             </div>}
             {clicked===strings.organisations && <div className="help__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
             </div>}
