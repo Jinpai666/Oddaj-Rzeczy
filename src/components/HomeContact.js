@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import DecoratedHeader from "./DecoratedHeader";
+import HomeFooter from "./HomeFooter";
 
 
 export default function HomeContact(){
@@ -61,5 +62,6 @@ export default function HomeContact(){
                 <button className="contact__button" type="submit">Wyślij</button>
             </form>
         </section>
+
     )
 }

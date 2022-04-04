@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
+  margin-bottom: 16rem ;
   &__header{
     margin: 7rem 0 12rem;
   }
@@ -116,6 +118,25 @@
       }
       &-right{
         font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .help {
+    margin-bottom: 25rem ;
+    &__detail{
+      &-left{
+        &-row-1{
+          font-size: 1.4rem;
+        }
+        &-row-2{
+          font-size: 1.4rem;
+        }
+      }
+      &-right{
+        font-size: 1.4rem;
       }
     }
   }
