@@ -1,6 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+// import axios from "axios";
 import DecoratedHeader from "./DecoratedHeader";
 
 export default function HomeContact(){
@@ -11,6 +12,7 @@ export default function HomeContact(){
             email: "",
             message:""
         },
+//yup validation
         validationSchema: Yup.object({
             name: Yup.string()
                 .matches(/^[\p{L}]+$/u, "Imię powinno być jednym wyrazem bez znaków specjalnych")
@@ -27,11 +29,12 @@ export default function HomeContact(){
             console.log(values.message);
         },
     });
-//yup validation
+
 
     return (
         <section id="contact" className="contact">
             <form  className="contact__form" onSubmit={formik.handleSubmit}>
+
                 <DecoratedHeader styling="contact__header" text="Skontaktuj się z nami"/>
                 <div className="contact__first-row">
                     <div className="contact__input-wrapper">
@@ -45,6 +48,7 @@ export default function HomeContact(){
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                                 value={formik.values.name}
+                                style={formik.touched.name && formik.errors.name ? {borderColor:"red"} : null}
                             />
                         </label>
                         {formik.touched.name && formik.errors.name ? <p className="contact__error">{formik.errors.name}</p> : null}
@@ -60,6 +64,7 @@ export default function HomeContact(){
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                                 value={formik.values.email}
+                                style={formik.touched.email && formik.errors.email ? {borderColor:"red"} : null}
                             />
                         </label>
                         {formik.touched.email && formik.errors.email ? <p className="contact__error">{formik.errors.email}</p> : null}
@@ -72,8 +77,9 @@ export default function HomeContact(){
                         name="message" rows="4"
                         placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                         onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
+                        // onBlur={formik.handleBlur}
                         value={formik.values.message}
+                        style={formik.touched.message && formik.errors.message ? {borderColor:"red"} : null}
                     />
                     {formik.touched.message && formik.errors.message ? <p className="contact__error">{formik.errors.message}</p> : null}
                 </div>
