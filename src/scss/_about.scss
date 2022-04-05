@@ -45,16 +45,17 @@
     flex-direction: column;
     align-items: center;
     &::after{
-     display: none;
+      display: none;
     }
     &__left-side{
       width: 100%;
       padding: 7rem 0;
     }
     &__text{
-      font-size: 4.4vw;
+      font-size: calc(1.6rem + 6 * ((100vw - 320px) / 680));
       width: 80%;
       height: 30rem;
+      padding-bottom: calc(30vw+ 6 * ((100vw - 320px) / 680));
       &::after{
         transform:translateY(50%);
       }
