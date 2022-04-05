@@ -28,7 +28,7 @@ export default function HomeContact(){
                 .min(120,"Wiadomość musi mieć conajmniej 120 znaków"),
         }),
         //post on submit
-        onSubmit:async (values) => {
+        onSubmit: async (values) => {
             try{
                 const post = await axios.post(
                     url,
@@ -43,13 +43,13 @@ export default function HomeContact(){
                 );
                 console.log(post.data);
                 setSuccess(true);
+                formik.resetForm()
             } catch (error) {
-                console.log(error)
+                console.log(error);
+                alert("Przepraszamy, coś poszło nie tak, spróbuj jeszcze raz");
             }
         },
     });
-
-
 
     return (
         <section id="contact" className="contact">
@@ -83,7 +83,7 @@ export default function HomeContact(){
                             Wpisz swoje email
                             <input
                                 className="contact__field"
-                                type="email"
+                                type="text"
                                 name="email"
                                 placeholder={"abc@xyz.pl"}
                                 onChange={formik.handleChange}
@@ -102,14 +102,12 @@ export default function HomeContact(){
                         name="message" rows="4"
                         placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                         onChange={formik.handleChange}
-                        // onBlur={formik.handleBlur}
+                        onBlur={formik.handleBlur}
                         value={formik.values.message}
                         style={formik.touched.message && formik.errors.message ? {borderColor:"red"} : null}
                     />
                     {formik.touched.message && formik.errors.message ? <p className="contact__error">{formik.errors.message}</p> : null}
                 </div>
-
-
                 <button className="contact__button" type="submit">Wyślij</button>
             </form>
         </section>
