@@ -102,6 +102,7 @@
 }
 @media (max-width: 800px) {
   .contact {
+    padding-bottom: 1rem;
     &::before {
       opacity: 0.15;
       background-position: 10%;
