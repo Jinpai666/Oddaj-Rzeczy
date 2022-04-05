@@ -1,10 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-// import axios from "axios";
+import axios from "axios";
 import DecoratedHeader from "./DecoratedHeader";
+const url= "https://fer-api.coderslab.pl/v1/portfolio/contact";
 
 export default function HomeContact(){
+
+    const [success, setSuccess] = useState(false);
+
 //formik data collection
     const formik = useFormik({
         initialValues:{
@@ -12,7 +16,7 @@ export default function HomeContact(){
             email: "",
             message:""
         },
-//yup validation
+        //yup validation
         validationSchema: Yup.object({
             name: Yup.string()
                 .matches(/^[\p{L}]+$/u, "Imię powinno być jednym wyrazem bez znaków specjalnych")
@@ -23,19 +27,40 @@ export default function HomeContact(){
             message: Yup.string()
                 .min(120,"Wiadomość musi mieć conajmniej 120 znaków"),
         }),
-        onSubmit: (values) => {
-            console.log(values.name);
-            console.log(values.email);
-            console.log(values.message);
+        //post on submit
+        onSubmit:async (values) => {
+            try{
+                const post = await axios.post(
+                    url,
+                    {
+                        name: values.name,
+                        email: values.email,
+                        message: values.message
+                    },
+                    {
+                        "Content-Type": "application/json"
+                    }
+                );
+                console.log(post.data);
+                setSuccess(true);
+            } catch (error) {
+                console.log(error)
+            }
         },
     });
 
 
+
     return (
         <section id="contact" className="contact">
+
             <form  className="contact__form" onSubmit={formik.handleSubmit}>
 
                 <DecoratedHeader styling="contact__header" text="Skontaktuj się z nami"/>
+                {success && <p className="contact__info">
+                    Wiadomość została wysłana!<br/>
+                    Wkrótce się skontaktujemy.
+                </p>}
                 <div className="contact__first-row">
                     <div className="contact__input-wrapper">
                         <label className="contact__label" htmlFor="name">
