@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
-//react hash router
+
 export default function HomeHeader(){
     return (
         <nav className="header">
@@ -10,7 +10,7 @@ export default function HomeHeader(){
                 <Link className="header__button" to="rejestracja">Załóż Konto</Link>
             </div>
             <ul className="header__bottom">
-                <li className="header__menu-item" tabIndex={0}>
+                <li className="header__menu-item">
                     <HashLink
                         className="header__menu-link"
                         activeClass="active"
@@ -23,7 +23,7 @@ export default function HomeHeader(){
                         Start
                     </HashLink>
                 </li>
-                <li className="header__menu-item" tabIndex={0}>
+                <li className="header__menu-item">
                     <HashLink
                         className="header__menu-link"
                         activeClass="active"
@@ -36,7 +36,7 @@ export default function HomeHeader(){
                         O co chodzi?
                     </HashLink>
                 </li>
-                <li className="header__menu-item" tabIndex={0}>
+                <li className="header__menu-item">
                     <HashLink
                         className="header__menu-link"
                         activeClass="active"
@@ -49,7 +49,7 @@ export default function HomeHeader(){
                         O nas
                     </HashLink>
                 </li>
-                <li className="header__menu-item" tabIndex={0}>
+                <li className="header__menu-item">
                     <HashLink
                         className="header__menu-link"
                         activeClass="active"
@@ -62,7 +62,7 @@ export default function HomeHeader(){
                         Fundacje i organizacje
                     </HashLink>
                 </li>
-                <li className="header__menu-item" tabIndex={0}>
+                <li className="header__menu-item">
                     <HashLink
                         className="header__menu-link"
                         activeClass="active"
@@ -77,8 +77,5 @@ export default function HomeHeader(){
                 </li>
             </ul>
         </nav>
-
-
     )
-
 }

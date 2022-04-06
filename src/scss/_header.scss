@@ -1,6 +1,6 @@
 .header{
   color: black;
-  margin-right: 7vw;
+  margin-right: 8vw;
   margin-top: 2vw;
   background-color: transparent;
   position: absolute;
@@ -39,6 +39,7 @@
     justify-content: flex-end;
     font-size: 1.8rem;
     align-items: center;
+    gap: 3rem;
   }
 }
 @media (max-width: 800px) {
