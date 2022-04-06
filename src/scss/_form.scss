@@ -24,6 +24,7 @@
   &__field{
     outline: none;
     border-color: transparent;
+    border: none;
     border-bottom: 1px solid $decoration-dark-color;
     display: block;
     font-size: 1.8rem;
@@ -31,6 +32,9 @@
     padding-top: 1rem;
     width: 25rem;
     margin-bottom: 1rem;
+    &:focus{
+      outline: none;
+    }
   }
   &__error{
     color: red;
