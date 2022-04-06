@@ -63,40 +63,46 @@ export default function Login(){
             <form className="form__container"  onSubmit={formik.handleSubmit}>
                 <DecoratedHeader styling={"form__header"} text="Zaloguj się"/>
                 <div className="form__inputs">
-                    <label className="form__label" htmlFor="email">Email
-                        <input
-                            className="form__field"
-                            type="text"
-                            name="email"
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            value={formik.values.email}
+                    <div className="form__input-wrapper">
+                        <label className="form__label" htmlFor="email">Email
+                            <input
+                                className="form__field"
+                                type="text"
+                                name="email"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.email}
 
-                        />
-                    </label>
-                    {formik.touched.email && formik.errors.email ? <p className="form__error">{formik.errors.email}</p> : null}
-                    <label className="form__label" htmlFor="password">Hasło
-                        <input
-                            className="form__field"
-                            type="password"
-                            name="password"
-                            value={formik.values.password}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                        />
-                    </label>
-                    {formik.touched.password && formik.errors.password ? <p className="form__error">{formik.errors.password}</p> : null}
-                    <label className="form__label" htmlFor="confirmPassword">Potwierdź hasło
-                        <input
-                            className="form__field"
-                            type="password"
-                            name="confirmPassword"
-                            value={formik.values.confirmPassword}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                        />
-                    </label>
-                    {formik.touched.confirmPassword && formik.errors.confirmPassword ? <p className="form__error">{formik.errors.confirmPassword}</p> : null}
+                            />
+                        </label>
+                        {formik.touched.email && formik.errors.email ? <p className="form__error">{formik.errors.email}</p> : null}
+                    </div>
+                    <div className="form__input-wrapper">
+                        <label className="form__label" htmlFor="password">Hasło
+                            <input
+                                className="form__field"
+                                type="password"
+                                name="password"
+                                value={formik.values.password}
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                            />
+                        </label>
+                        {formik.touched.password && formik.errors.password ? <p className="form__error">{formik.errors.password}</p> : null}
+                    </div>
+                    <div className="form__input-wrapper">
+                        <label className="form__label" htmlFor="confirmPassword">Potwierdź hasło
+                            <input
+                                className="form__field"
+                                type="password"
+                                name="confirmPassword"
+                                value={formik.values.confirmPassword}
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                            />
+                        </label>
+                        {formik.touched.confirmPassword && formik.errors.confirmPassword ? <p className="form__error">{formik.errors.confirmPassword}</p> : <p className="form__error">{formik.errors.confirmPassword}</p>}
+                    </div>
                 </div>
                 <div className="form__buttons">
                     <Link className="form__button" to="/rejestracja">Załóż konto</Link>
