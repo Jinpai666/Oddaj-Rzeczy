@@ -1,4 +1,4 @@
-.login{
+.form{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +48,6 @@
     }
     &:nth-of-type(2){
       transform: translateX(50%)
-
     }
   }
 }

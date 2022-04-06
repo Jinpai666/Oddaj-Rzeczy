@@ -51,13 +51,13 @@ export default function Login(){
 
 
     return (
-        <section className="login">
-            <form className="login__container"  onSubmit={formik.handleSubmit}>
-                <DecoratedHeader styling={"login__header"} text="Zaloguj się"/>
-                <div className="login__inputs">
-                    <label className="login__label" htmlFor="email">Email
+        <section className="form">
+            <form className="form__container"  onSubmit={formik.handleSubmit}>
+                <DecoratedHeader styling={"form__header"} text="Zaloguj się"/>
+                <div className="form__inputs">
+                    <label className="form__label" htmlFor="email">Email
                         <input
-                            className="login__field"
+                            className="form__field"
                             type="text"
                             name="email"
                             onChange={formik.handleChange}
@@ -66,10 +66,10 @@ export default function Login(){
 
                         />
                     </label>
-                    {formik.touched.email && formik.errors.email ? <p className="login__error">{formik.errors.email}</p> : null}
-                    <label className="login__label" htmlFor="password">Hasło
+                    {formik.touched.email && formik.errors.email ? <p className="form__error">{formik.errors.email}</p> : null}
+                    <label className="form__label" htmlFor="password">Hasło
                         <input
-                            className="login__field"
+                            className="form__field"
                             type="password"
                             name="password"
                             value={formik.values.password}
@@ -81,11 +81,11 @@ export default function Login(){
                             onBlur={formik.handleBlur}
                         />
                     </label>
-                    {formik.touched.password && formik.errors.password ? <p className="login__error">{formik.errors.password}</p> : null}
+                    {formik.touched.password && formik.errors.password ? <p className="form__error">{formik.errors.password}</p> : null}
                 </div>
-                <div className="login__buttons">
-                    <Link className="login__button" to="/rejestracja">Załóż konto</Link>
-                    <Link className="login__button" to="/">Zaloguj się</Link>
+                <div className="form__buttons">
+                    <Link className="form__button" to="/rejestracja">Załóż konto</Link>
+                    <Link className="form__button" to="/">Zaloguj się</Link>
                 </div>
                 <button type="submit">submit</button>
 
