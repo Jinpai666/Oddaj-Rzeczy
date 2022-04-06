@@ -25,7 +25,9 @@ export default function HomeContact(){
                 .email("Niepoprawny adres email")
                 .required("Proszę podać adres email"),
             message: Yup.string()
-                .min(120,"Wiadomość musi mieć conajmniej 120 znaków"),
+                .min(120,"Wiadomość musi mieć conajmniej 120 znaków")
+                .required("Wiadomość musi mieć conajmniej 120 znaków"),
+
         }),
         //post on submit
         onSubmit: async (values) => {
@@ -40,10 +42,11 @@ export default function HomeContact(){
                     {
                         "Content-Type": "application/json"
                     }
-                );
+                )
+                //pytanie - jak odwrotnie to jest błąd?
                 console.log(post.data);
+                formik.resetForm();
                 setSuccess(true);
-                formik.resetForm()
             } catch (error) {
                 console.log(error);
                 alert("Przepraszamy, coś poszło nie tak, spróbuj jeszcze raz");
@@ -53,9 +56,7 @@ export default function HomeContact(){
 
     return (
         <section id="contact" className="contact">
-
             <form  className="contact__form" onSubmit={formik.handleSubmit}>
-
                 <DecoratedHeader styling="contact__header" text="Skontaktuj się z nami"/>
                 {success && <p className="contact__info">
                     Wiadomość została wysłana!<br/>
