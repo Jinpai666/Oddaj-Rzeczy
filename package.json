@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "firebase": "^9.6.10",
     "formik": "^2.2.9",
     "framer-motion": "^6.2.9",
     "node-sass": "^7.0.1",
