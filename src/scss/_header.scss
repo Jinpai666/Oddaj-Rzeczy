@@ -20,13 +20,14 @@
   &__menu-item{
     padding: 1rem;
     border: 1px solid transparent;
-    color: $main-text-color;
-    text-decoration: none;
     cursor: pointer;
-
     &:hover{
       border: 1px solid $main-text-color;
     }
+  }
+  &__menu-link{
+    color: $main-text-color;
+    text-decoration: none;
   }
   &__top{
     display: flex;

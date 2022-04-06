@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {Link as ScrollLink} from "react-scroll";
+import { HashLink } from 'react-router-hash-link';
 //react hash router
 export default function HomeHeader(){
     return (
@@ -11,64 +11,69 @@ export default function HomeHeader(){
             </div>
             <ul className="header__bottom">
                 <li className="header__menu-item" tabIndex={0}>
-                    <ScrollLink
+                    <HashLink
+                        className="header__menu-link"
                         activeClass="active"
-                        to="main"
+                        to={"/#main"}
                         spy={true}
                         smooth={true}
                         offset={50}
                         duration={500}
                     >
                         Start
-                    </ScrollLink>
+                    </HashLink>
                 </li>
                 <li className="header__menu-item" tabIndex={0}>
-                    <ScrollLink
+                    <HashLink
+                        className="header__menu-link"
                         activeClass="active"
-                        to="threeCol"
+                        to="/#threeCol"
                         spy={true}
                         smooth={true}
                         offset={50}
                         duration={500}
                     >
                         O co chodzi?
-                    </ScrollLink>
+                    </HashLink>
                 </li>
                 <li className="header__menu-item" tabIndex={0}>
-                    <ScrollLink
+                    <HashLink
+                        className="header__menu-link"
                         activeClass="active"
-                        to="about-us"
+                        to="/#about-us"
                         spy={true}
                         smooth={true}
                         offset={50}
                         duration={500}
                     >
                         O nas
-                    </ScrollLink>
+                    </HashLink>
                 </li>
                 <li className="header__menu-item" tabIndex={0}>
-                    <ScrollLink
+                    <HashLink
+                        className="header__menu-link"
                         activeClass="active"
-                        to="help"
+                        to="/#help"
                         spy={true}
                         smooth={true}
                         offset={50}
                         duration={500}
                     >
                         Fundacje i organizacje
-                    </ScrollLink>
+                    </HashLink>
                 </li>
                 <li className="header__menu-item" tabIndex={0}>
-                    <ScrollLink
+                    <HashLink
+                        className="header__menu-link"
                         activeClass="active"
-                        to="contact"
+                        to="/#contact"
                         spy={true}
                         smooth={true}
                         offset={50}
                         duration={500}
                     >
                         Kontakt
-                    </ScrollLink>
+                    </HashLink>
                 </li>
             </ul>
         </nav>
