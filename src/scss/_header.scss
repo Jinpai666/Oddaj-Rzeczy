@@ -1,3 +1,12 @@
+.burger{
+  display: none;
+  position: absolute;
+  left: 0;
+  padding-left: 4rem;
+  cursor: pointer;
+  width: 4rem;
+  height: 4rem;
+}
 .header{
   color: black;
   margin-right: 8vw;
@@ -40,14 +49,52 @@
     font-size: 1.8rem;
     align-items: center;
     gap: 3rem;
+    transition: .3s;
   }
 }
+
 @media (max-width: 800px) {
+
+  .hidden{
+    display:none;
+  }
+  .burger{
+    display: block;
+  }
   .header {
     font-size: 1rem;
     margin: 0;
     top: -8rem;
     right: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width:100%;
+    &__bottom{
+      flex-direction: column;
+      background-color: rgba(255, 255, 255, .9);
+      gap: 0;
+      width: 50%;
+      padding: 3rem;
+      border-radius: 0 0 5rem  0;
+      text-align: center;
+    }
+    &__menu-item {
+      width: 100%;
+      &:hover {
+        border-color: transparent;
+      }
+    }
+    &__menu-link{
+
+      &:hover{
+        font-weight: 600;
+      }
+    }
+    &__button{
+      height: 1.6rem;
+    }
   }
-  //implement burger menu
 }
+
+

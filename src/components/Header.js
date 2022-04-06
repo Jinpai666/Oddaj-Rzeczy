@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import {Link} from "react-router-dom";
-import { HashLink } from 'react-router-hash-link';
+import {HashLink} from "react-router-hash-link";
+import {BiMenu} from "react-icons/bi";
+import {CgClose} from "react-icons/cg";
+
 
 export default function HomeHeader(){
+    //burger menu logic
+    const [isOpen, setIsOpen] = useState(false)
+    const handleClick = () => {
+        setIsOpen(!isOpen);
+    }
+
     return (
         <nav className="header">
             <div className="header__top">
                 <Link className="header__button" to="logowanie">Zaloguj</Link>
                 <Link className="header__button" to="rejestracja">Załóż Konto</Link>
             </div>
-            <ul className="header__bottom">
-                <li className="header__menu-item">
+
+            <ul  className={`header__bottom ${!isOpen && "hidden"}`}>
+                <li
+                    className="header__menu-item"
+                    onClick={handleClick}
+                >
                     <HashLink
                         className="header__menu-link"
                         activeClass="active"
@@ -23,7 +36,12 @@ export default function HomeHeader(){
                         Start
                     </HashLink>
                 </li>
-                <li className="header__menu-item">
+                <li
+                    className="header__menu-item"
+                    onClick={handleClick}
+
+
+                >
                     <HashLink
                         className="header__menu-link"
                         activeClass="active"
@@ -36,7 +54,10 @@ export default function HomeHeader(){
                         O co chodzi?
                     </HashLink>
                 </li>
-                <li className="header__menu-item">
+                <li
+                    className="header__menu-item"
+                    onClick={handleClick}
+                >
                     <HashLink
                         className="header__menu-link"
                         activeClass="active"
@@ -49,7 +70,10 @@ export default function HomeHeader(){
                         O nas
                     </HashLink>
                 </li>
-                <li className="header__menu-item">
+                <li
+                    className="header__menu-item"
+                    onClick={handleClick}
+                >
                     <HashLink
                         className="header__menu-link"
                         activeClass="active"
@@ -62,7 +86,10 @@ export default function HomeHeader(){
                         Fundacje i organizacje
                     </HashLink>
                 </li>
-                <li className="header__menu-item">
+                <li
+                    className="header__menu-item"
+                    onClick={handleClick}
+                >
                     <HashLink
                         className="header__menu-link"
                         activeClass="active"
@@ -76,6 +103,9 @@ export default function HomeHeader(){
                     </HashLink>
                 </li>
             </ul>
+            {!isOpen
+                ? <BiMenu className="burger" /*size="40px"*/ onClick={handleClick} />
+                : <CgClose className="burger" /*size="40px"*/ onClick={handleClick} />}
         </nav>
     )
 }
