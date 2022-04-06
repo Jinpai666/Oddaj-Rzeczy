@@ -6,6 +6,7 @@ import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import ErrorPage from "./components/ErrorPage";
 import "./scss/main.scss";
+import Logout from "./components/Logout";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="rejestracja" element={<SignUp/>} />
                 <Route path="logowanie" element={<Login/>} />
                 <Route path="*" element={<ErrorPage/>} />
+                <Route path="wylogowano" element={<Logout/>} />
             </Routes>
         </Router>
     );
