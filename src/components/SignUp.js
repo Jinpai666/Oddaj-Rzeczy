@@ -1,36 +1,10 @@
-import React, { useState } from "react";
-
-import {Link} from "react-router-dom";
+import React, {useEffect} from "react";
+import {Link, useNavigate} from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import DecoratedHeader from "./DecoratedHeader";
 
-
-export default function Login(){
-    // const[loginEmail, setLoginEmail] = useState("");
-    // const[loginPassword, setLoginPassword] = useState("");
-    // const changeEmailValue = (event) => {setLoginEmail(event.target.value)};
-    // const changePasswordlValue = (event) => {setLoginPassword(event.target.value)};
-//Firebase data
-//     const[registerEmail, setRegisterEmail] = useState("");
-//     const[registerPassword, setRegisterPassword] = useState("");
-//     const[loginError, setLoginError] = useState('')
-//     const register = async () =>{
-//         try {
-//             const user = await createUserWithEmailAndPassword(
-//                 auth,
-//                 registerEmail,
-//                 registerPassword
-//             );
-//             console.log(user)
-//         } catch (error){
-//             console.log(error.message)
-//             setLoginError(error)
-//         }
-//     }
-//     const changeEmailValue = (event) => {setRegisterEmail(event.target.value)};
-//     const changePasswordValue = (event) => {setRegisterPassword(event.target.value)};
-
+export default function Login(props){
 //formik data collection
     const formik = useFormik({
         initialValues:{
@@ -46,22 +20,30 @@ export default function Login(){
             password: Yup.string()
                 .min(6,"Hasło musi mieć przynajmniej 6 znaków")
                 .required("Proszę podać hasło"),
-            confirmPassword: Yup.string().oneOf(
-                [Yup.ref("password")],
-                "Hasła muszą się zgadzać"
-            )
+            confirmPassword: Yup.string()
+                .oneOf(
+                    [Yup.ref("password")],
+                    "Hasła muszą się zgadzać"
+                )
+                .required("Proszę potwierdź hasło"),
         }),
         //post on submit
         onSubmit: () => {
-            console.log('loguje')
+            console.log('rejestruje');
+            props.register();
         },
     });
-
-
+//navigate
+    const navigate = useNavigate();
+    useEffect(() =>{
+        if(props.currentUser){
+            navigate('/')
+        }
+    }, [props.currentUser]);
     return (
         <section className="form">
             <form className="form__container"  onSubmit={formik.handleSubmit}>
-                <DecoratedHeader styling={"form__header"} text="Zaloguj się"/>
+                <DecoratedHeader styling={"form__header"} text="Zarejestruj się"/>
                 <div className="form__inputs">
                     <div className="form__input-wrapper">
                         <label className="form__label" htmlFor="email">Email
@@ -69,7 +51,9 @@ export default function Login(){
                                 className="form__field"
                                 type="text"
                                 name="email"
-                                onChange={formik.handleChange}
+                                onChange={event => {                           formik.handleChange(event);
+                                    props.setRegisterEmail(event.target.value);
+                                }}
                                 onBlur={formik.handleBlur}
                                 value={formik.values.email}
                                 style={formik.touched.email && formik.errors.email ? {borderColor:"red"} : null}
@@ -84,7 +68,9 @@ export default function Login(){
                                 type="password"
                                 name="password"
                                 value={formik.values.password}
-                                onChange={formik.handleChange}
+                                onChange={event => {                           formik.handleChange(event);
+                                    props.setRegisterPassword(event.target.value);
+                                }}
                                 onBlur={formik.handleBlur}
                                 style={formik.touched.password && formik.errors.password ? {borderColor:"red"} : null}
                             />
@@ -107,12 +93,15 @@ export default function Login(){
                     </div>
                 </div>
                 <div className="form__buttons">
-                    <Link className="form__button" to="/rejestracja">Załóż konto</Link>
+                    <button type="submit" className="form__button">Załóż konto</button>
                     <Link className="form__button" to="/">Zaloguj się</Link>
                 </div>
-                <button type="submit">submit</button>
+
 
             </form>
+
+
+
         </section>
     )
 }

@@ -1,33 +1,10 @@
-import React, { useState } from "react";
-
-import {Link} from "react-router-dom";
+import React, { useEffect } from "react";
+import {Link, useNavigate} from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import DecoratedHeader from "./DecoratedHeader";
-import axios from "axios";
 
-
-export default function Login(){
-    const[loginEmail, setLoginEmail] = useState("");
-    const[loginPassword, setLoginPassword] = useState("");
-    const changeEmailValue = (event) => {setLoginEmail(event.target.value)};
-    const changePasswordlValue = (event) => {setLoginPassword(event.target.value)};
-    //firebase data
-    // const[loginError, setLoginError] = useState('')
-    // const login = async () =>{
-    //     try {
-    //         const user = await signInWithEmailAndPassword(
-    //             auth,
-    //             loginEmail,
-    //             loginPassword
-    //         );
-    //         console.log(user)
-    //     } catch (error){
-    //         console.log(error.message)
-    //         setLoginError(error)
-    //     }
-    // }
-
+export default function Login(props){
 //formik data collection
     const formik = useFormik({
         initialValues:{
@@ -45,15 +22,23 @@ export default function Login(){
         }),
         //post on submit
         onSubmit: () => {
+            props.login();
             console.log('loguje')
         },
     });
-
+//navigate
+    const navigate = useNavigate();
+    useEffect(() =>{
+        if(props.currentUser){
+            navigate('/')
+        }
+    }, [props.currentUser]);
 
     return (
         <section className="form">
             <form className="form__container"  onSubmit={formik.handleSubmit}>
                 <DecoratedHeader styling={"form__header"} text="Zaloguj się"/>
+                {props.loginError && <p>Zły email lub hasło</p>}
                 <div className="form__inputs">
                     <div className="form__input-wrapper">
                         <label className="form__label" htmlFor="email">Email
@@ -61,7 +46,9 @@ export default function Login(){
                                 className="form__field"
                                 type="text"
                                 name="email"
-                                onChange={formik.handleChange}
+                                onChange={event => {                           formik.handleChange(event);
+                                    props.setLoginEmail(event.target.value);
+                                }}
                                 onBlur={formik.handleBlur}
                                 value={formik.values.email}
                                 style={formik.touched.email && formik.errors.email ? {borderColor:"red"} : null}
@@ -76,11 +63,9 @@ export default function Login(){
                                 type="password"
                                 name="password"
                                 value={formik.values.password}
-                                onChange={event => {
-                                    formik.handleChange(event);
-                                    changePasswordlValue(event);
-                                }
-                                }
+                                onChange={event => {                           formik.handleChange(event);
+                                    props.setLoginPassword(event.target.value);
+                                }}
                                 onBlur={formik.handleBlur}
                                 style={formik.touched.password && formik.errors.password ? {borderColor:"red"} : null}
                             />
@@ -92,9 +77,8 @@ export default function Login(){
                 </div>
                 <div className="form__buttons">
                     <Link className="form__button" to="/rejestracja">Załóż konto</Link>
-                    <Link className="form__button" to="/">Zaloguj się</Link>
+                    <button type="submit" className="form__button">Zaloguj się</button>
                 </div>
-                <button type="submit">submit</button>
 
             </form>
         </section>

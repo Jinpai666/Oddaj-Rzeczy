@@ -5,7 +5,7 @@ import {BiMenu} from "react-icons/bi";
 import {CgClose} from "react-icons/cg";
 
 
-export default function HomeHeader(){
+export default function HomeHeader(props){
     //burger menu logic
     const [isOpen, setIsOpen] = useState(false)
     const handleClick = () => {
@@ -15,6 +15,10 @@ export default function HomeHeader(){
     return (
         <nav className="header">
             <div className="header__top">
+                <button onClick={()=>{
+                    props.logout()
+                }}>logout</button>
+                {props.currentUser && <h4>{props.currentUser.email}</h4>}
                 <Link className="header__button" to="logowanie">Zaloguj</Link>
                 <Link className="header__button" to="rejestracja">Załóż Konto</Link>
             </div>

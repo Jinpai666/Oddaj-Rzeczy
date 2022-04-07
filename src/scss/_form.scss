@@ -44,7 +44,8 @@
   }
   &__buttons{
     display: flex;
-    justify-content:space-between
+    justify-content:space-between;
+
   }
   &__button{
     padding: 1rem;
@@ -53,13 +54,14 @@
     line-height: 3.2rem;
     text-decoration: none;
     color: $main-text-color;
+    background-color: transparent;
     &:hover{
       border: 1px solid $decoration-dark-color
     }
-    &:first-of-type{
+    &:nth-child(1){
       transform: translateX(-50%)
     }
-    &:nth-of-type(2){
+    &:nth-child(2){
       transform: translateX(50%)
     }
   }
