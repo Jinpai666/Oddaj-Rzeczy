@@ -68,7 +68,7 @@ export default function Login(props){
                                 type="password"
                                 name="password"
                                 value={formik.values.password}
-                                onChange={event => {                           formik.handleChange(event);
+                                onChange={event => {formik.handleChange(event);
                                     props.setRegisterPassword(event.target.value);
                                 }}
                                 onBlur={formik.handleBlur}
@@ -94,7 +94,7 @@ export default function Login(props){
                 </div>
                 <div className="form__buttons">
                     <button type="submit" className="form__button">Załóż konto</button>
-                    <Link className="form__button" to="/">Zaloguj się</Link>
+                    <Link className="form__button" to="/logowanie">Zaloguj się</Link>
                 </div>
 
 

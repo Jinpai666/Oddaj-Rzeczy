@@ -28,17 +28,20 @@ export default function Login(props){
     });
 //navigate
     const navigate = useNavigate();
-    useEffect(() =>{
+        useEffect(() =>{
         if(props.currentUser){
             navigate('/')
         }
     }, [props.currentUser]);
 
+
+
     return (
         <section className="form">
+
             <form className="form__container"  onSubmit={formik.handleSubmit}>
                 <DecoratedHeader styling={"form__header"} text="Zaloguj się"/>
-                {props.loginError && <p>Zły email lub hasło</p>}
+                {props.loginError && <p className="form__login-error">Zły email lub hasło</p>}
                 <div className="form__inputs">
                     <div className="form__input-wrapper">
                         <label className="form__label" htmlFor="email">Email
@@ -46,7 +49,7 @@ export default function Login(props){
                                 className="form__field"
                                 type="text"
                                 name="email"
-                                onChange={event => {                           formik.handleChange(event);
+                                onChange={event => {formik.handleChange(event);
                                     props.setLoginEmail(event.target.value);
                                 }}
                                 onBlur={formik.handleBlur}
@@ -72,15 +75,14 @@ export default function Login(props){
                         </label>
                         {formik.touched.password && formik.errors.password ? <p className="form__error">{formik.errors.password}</p> : null}
                     </div>
-
-
                 </div>
                 <div className="form__buttons">
-                    <Link className="form__button" to="/rejestracja">Załóż konto</Link>
-                    <button type="submit" className="form__button">Zaloguj się</button>
+                    <Link   className="form__button" to="/rejestracja">Załóż konto</Link>
+                    <button  type="submit" className="form__button">Zaloguj się</button>
                 </div>
-
             </form>
+            <button onClick={()=>{
+                console.log(props.loginError)}}>path</button>
         </section>
     )
 }

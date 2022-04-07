@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState} from "react";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home"
 import SignUp from "./components/SignUp";
@@ -58,8 +58,6 @@ function App() {
         await signOut(auth);
         console.log('wylogowano');
     }
-    // const changeEmailValue = (event) => {setRegisterEmail(event.target.value);};
-    // const changePasswordValue = (event) => {setRegisterPassword(event.target.value)};
 
 
     return (
@@ -67,6 +65,7 @@ function App() {
             <Header
                 currentUser={currentUser}
                 logout={logout}
+                setLoginError={setLoginError}
             />
             <Routes>
                 <Route path="/" element={<Home
@@ -86,6 +85,7 @@ function App() {
                     currentUser={currentUser}
                     login={login}
                     loginError={loginError}
+                    setLoginError={setLoginError}
                 />} />
                 <Route path="*" element={<ErrorPage/>} />
                 <Route path="wylogowano" element={<Logout/>} />

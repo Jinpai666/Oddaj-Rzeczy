@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import {Link} from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {Link, useLocation} from "react-router-dom";
 import {HashLink} from "react-router-hash-link";
 import {BiMenu} from "react-icons/bi";
 import {CgClose} from "react-icons/cg";
-
 
 export default function HomeHeader(props){
     //burger menu logic
@@ -11,10 +10,18 @@ export default function HomeHeader(props){
     const handleClick = () => {
         setIsOpen(!isOpen);
     }
+    //clear login error
+    const path = useLocation().pathname;
+    useEffect(() =>{
+        if(path !== "/logowanie"){
+            props.setLoginError("")
+            console.log('clear')
+        }
+    }, [path]);
 
     return (
         <nav className="header">
-
+            <h1>{path}</h1>
             {!props.currentUser
                 ? <div className="header__top">
                     <Link className="header__button header__button-light" to="logowanie">Zaloguj</Link>
@@ -28,9 +35,6 @@ export default function HomeHeader(props){
                     }}>Wyloguj</button>
                 </div>
             }
-
-
-
             <ul  className={`header__bottom ${!isOpen && "hidden"}`}>
                 <li
                     className="header__menu-item"
@@ -51,8 +55,6 @@ export default function HomeHeader(props){
                 <li
                     className="header__menu-item"
                     onClick={handleClick}
-
-
                 >
                     <HashLink
                         className="header__menu-link"
