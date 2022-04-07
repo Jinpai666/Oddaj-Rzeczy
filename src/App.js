@@ -68,25 +68,36 @@ function App() {
                 setLoginError={setLoginError}
             />
             <Routes>
-                <Route path="/" element={<Home
-                    currentUser={currentUser}
-                />} />
-                <Route path="rejestracja" element={<SignUp
-                    register={register}
-                    setRegisterEmail={setRegisterEmail}
-                    setRegisterPassword={setRegisterPassword}
-                    currentUser={currentUser}
-
-                />} />
-                <Route path="logowanie" element={<Login
-                    register={register}
-                    setLoginEmail={setLoginEmail}
-                    setLoginPassword={setLoginPassword}
-                    currentUser={currentUser}
-                    login={login}
-                    loginError={loginError}
-                    setLoginError={setLoginError}
-                />} />
+                <Route
+                    path="/"
+                    element={
+                    <Home
+                        currentUser={currentUser}
+                    />}
+                />
+                <Route
+                    path="rejestracja"
+                    element={
+                        <SignUp
+                           register={register}
+                           setRegisterEmail={setRegisterEmail}
+                           setRegisterPassword={setRegisterPassword}
+                           currentUser={currentUser}
+                        />}
+                />
+                <Route
+                    path="logowanie"
+                    element={
+                        <Login
+                            register={register}
+                            setLoginEmail={setLoginEmail}
+                            setLoginPassword={setLoginPassword}
+                            currentUser={currentUser}
+                            login={login}
+                            loginError={loginError}
+                            setLoginError={setLoginError}
+                        />}
+                />
                 <Route path="*" element={<ErrorPage/>} />
                 <Route path="wylogowano" element={<Logout/>} />
             </Routes>

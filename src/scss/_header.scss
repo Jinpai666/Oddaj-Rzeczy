@@ -83,7 +83,6 @@
 }
 
 @media (max-width: 800px) {
-
   .hidden{
     display:none;
   }
@@ -99,6 +98,12 @@
     flex-direction: row-reverse;
     justify-content: space-between;
     width:100%;
+    position: unset;
+    &__top{
+      flex-direction:column;
+      justify-content: flex-start;
+      padding: 3rem
+    }
     &__bottom{
       flex-direction: column;
       background-color: rgba(255, 255, 255, .9);

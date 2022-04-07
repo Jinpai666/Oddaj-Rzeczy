@@ -41,9 +41,9 @@ export default function HomeHeader(props){
                 >
                     <HashLink
                         className="header__menu-link"
-                        activeClass="active"
+                        // activeClass="active"
                         to={"/#main"}
-                        spy={true}
+                        spy={"true"}
                         smooth={true}
                         offset={50}
                         duration={500}
@@ -57,9 +57,9 @@ export default function HomeHeader(props){
                 >
                     <HashLink
                         className="header__menu-link"
-                        activeClass="active"
+                        // activeClass="active"
                         to="/#threeCol"
-                        spy={true}
+                        spy={"true"}
                         smooth={true}
                         offset={50}
                         duration={500}
@@ -73,9 +73,9 @@ export default function HomeHeader(props){
                 >
                     <HashLink
                         className="header__menu-link"
-                        activeClass="active"
+                        // activeClass="active"
                         to="/#about-us"
-                        spy={true}
+                        spy={"true"}
                         smooth={true}
                         offset={50}
                         duration={500}
@@ -89,9 +89,9 @@ export default function HomeHeader(props){
                 >
                     <HashLink
                         className="header__menu-link"
-                        activeClass="active"
+                        // activeClass="active"
                         to="/#help"
-                        spy={true}
+                        spy={"true"}
                         smooth={true}
                         offset={50}
                         duration={500}
@@ -105,9 +105,9 @@ export default function HomeHeader(props){
                 >
                     <HashLink
                         className="header__menu-link"
-                        activeClass="active"
+                        // activeClass="active"
                         to="/#contact"
-                        spy={true}
+                        spy={"true"}
                         smooth={true}
                         offset={50}
                         duration={500}

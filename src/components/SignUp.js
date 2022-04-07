@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import DecoratedHeader from "./DecoratedHeader";
 
-export default function Login(props){
+export default function Register(props){
 //formik data collection
     const formik = useFormik({
         initialValues:{
@@ -89,15 +89,13 @@ export default function Login(props){
                                 style={formik.touched.confirmPassword && formik.errors.confirmPassword ? {borderColor:"red"} : null}
                             />
                         </label>
-                        {formik.touched.confirmPassword && formik.errors.confirmPassword ? <p className="form__error">{formik.errors.confirmPassword}</p> : <p className="form__error">{formik.errors.confirmPassword}</p>}
+                        {formik.touched.confirmPassword && formik.errors.confirmPassword ? <p className="form__error">{formik.errors.confirmPassword}</p> : null}
                     </div>
                 </div>
                 <div className="form__buttons">
                     <button type="submit" className="form__button">Załóż konto</button>
                     <Link className="form__button" to="/logowanie">Zaloguj się</Link>
                 </div>
-
-
             </form>
 
 

@@ -36,6 +36,7 @@
 }
 @media (max-width: 1400px){
   .main-section{
+    margin-top: 0;
     &::before{
       content: " ";
       position: absolute;
