@@ -7,11 +7,13 @@ import HomeContact from "./HomeContact";
 import HomeHelp from "./HomeHelp";
 import HomeFooter from "./HomeFooter";
 
-export default function Home(){
+export default function Home(props){
 
     return (
         <>
-            <HomeMainSection/>
+            <HomeMainSection
+                currentUser={props.currentUser}
+            />
             <HomeThreeColumns/>
             <HomeFourSteps/>
             <HomeAbout/>

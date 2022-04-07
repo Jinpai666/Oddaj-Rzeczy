@@ -69,7 +69,9 @@ function App() {
                 logout={logout}
             />
             <Routes>
-                <Route path="/" element={<Home/>} />
+                <Route path="/" element={<Home
+                    currentUser={currentUser}
+                />} />
                 <Route path="rejestracja" element={<SignUp
                     register={register}
                     setRegisterEmail={setRegisterEmail}

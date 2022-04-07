@@ -16,15 +16,44 @@
   top: 0;
   right: 0;
   z-index: 1;
+  &__greeting{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color:$dark-text-color
+  }
+  &__logout-button{
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color:$dark-text-color;
+    background:none;
+    font-size: 1.4rem;
+    border: 1px solid transparent;
+    font-family: $font-base;
+
+    &:hover{
+     border: 1px solid $decoration-dark-color;
+    };
+
+  }
   &__button{
+    display: flex;
+    align-items: center;
     padding: 1rem;
     text-decoration: none;
     border: 1px solid transparent;
     margin-bottom: 1rem;
-    color: $light-text-color;
     &:hover{
       border: 1px solid $accent-color;
     }
+    &-light{
+      color:$light-text-color
+    }
+    &-dark{
+      color:$dark-text-color
+    }
+
   }
   &__menu-item{
     padding: 1rem;

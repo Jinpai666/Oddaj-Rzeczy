@@ -23,9 +23,8 @@
   }
   &__field{
     outline: none;
-    border-color: transparent;
-    border: none;
-    border-bottom: 1px solid $decoration-dark-color;
+    border: none transparent;
+    border-bottom: 1px solid;
     display: block;
     font-size: 1.8rem;
     background-color: transparent;
@@ -40,12 +39,10 @@
     color: red;
     font-size: 1.2rem;
     height:0;
-
   }
   &__buttons{
     display: flex;
     justify-content:space-between;
-
   }
   &__button{
     padding: 1rem;
@@ -55,6 +52,7 @@
     text-decoration: none;
     color: $main-text-color;
     background-color: transparent;
+    cursor: pointer;
     &:hover{
       border: 1px solid $decoration-dark-color
     }

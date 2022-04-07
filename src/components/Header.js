@@ -14,14 +14,22 @@ export default function HomeHeader(props){
 
     return (
         <nav className="header">
-            <div className="header__top">
-                <button onClick={()=>{
-                    props.logout()
-                }}>logout</button>
-                {props.currentUser && <h4>{props.currentUser.email}</h4>}
-                <Link className="header__button" to="logowanie">Zaloguj</Link>
-                <Link className="header__button" to="rejestracja">Załóż Konto</Link>
-            </div>
+
+            {!props.currentUser
+                ? <div className="header__top">
+                    <Link className="header__button header__button-light" to="logowanie">Zaloguj</Link>
+                    <Link className="header__button header__button-light" to="rejestracja">Załóż Konto</Link>
+                </div>
+                : <div className="header__top">
+                    <p className="header__greeting">Cześć {props.currentUser.email}!</p>
+                    <Link className="header__button header__button-dark" to="/">Oddaj rzeczy</Link>
+                    <button className="header__logout-button" onClick={()=>{
+                        props.logout()
+                    }}>Wyloguj</button>
+                </div>
+            }
+
+
 
             <ul  className={`header__bottom ${!isOpen && "hidden"}`}>
                 <li
