@@ -28,17 +28,14 @@ export default function Login(props){
     });
 //navigate
     const navigate = useNavigate();
-        useEffect(() =>{
+    useEffect(() =>{
         if(props.currentUser){
             navigate('/')
         }
     }, [props.currentUser]);
 
-
-
     return (
         <section className="form">
-
             <form className="form__container"  onSubmit={formik.handleSubmit}>
                 <DecoratedHeader styling={"form__header"} text="Zaloguj się"/>
                 {props.loginError && <p className="form__login-error">Zły email lub hasło</p>}
@@ -81,8 +78,6 @@ export default function Login(props){
                     <button  type="submit" className="form__button">Zaloguj się</button>
                 </div>
             </form>
-            <button onClick={()=>{
-                console.log(props.loginError)}}>path</button>
         </section>
     )
 }

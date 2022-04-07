@@ -1,7 +1,7 @@
 import React from "react";
 import DecoratedHeader from "./DecoratedHeader";
 
-export default function HomeAbout(){
+export default function About(){
     return (
         <section id="about-us" className="about">
             <div className="about__left-side">

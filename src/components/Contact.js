@@ -5,7 +5,7 @@ import axios from "axios";
 import DecoratedHeader from "./DecoratedHeader";
 const url= "https://fer-api.coderslab.pl/v1/portfolio/contact";
 
-export default function HomeContact(){
+export default function Contact(){
 
     const [success, setSuccess] = useState(false);
 

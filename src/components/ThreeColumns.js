@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function HomeThreeColumns(){
+export default function ThreeColumns(){
     return (
         <section id="threeCol" className="threeCol">
             <div className="threeCol__col">

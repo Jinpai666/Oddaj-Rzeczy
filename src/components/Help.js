@@ -5,7 +5,7 @@ import Foundations from "../collections/foundations.json";
 import Organisations from "../collections/organisations.json";
 import Local from "../collections/local.json";
 
-export default function HomeHelp(){
+export default function Help(){
 
     //change collection
     const strings = {

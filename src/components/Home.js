@@ -1,25 +1,25 @@
 import React, {useState} from "react";
-import HomeMainSection from "./HomeMainSection"
-import HomeThreeColumns from "./HomeThreeColumns";
-import HomeFourSteps from "./HomeFourSteps";
-import HomeAbout from "./HomeAbout";
-import HomeContact from "./HomeContact";
-import HomeHelp from "./HomeHelp";
-import HomeFooter from "./HomeFooter";
+import MainSection from "./MainSection"
+import ThreeColumns from "./ThreeColumns";
+import FourSteps from "./FourSteps";
+import About from "./About";
+import Contact from "./Contact";
+import Help from "./Help";
+import Footer from "./Footer";
 
 export default function Home(props){
 
     return (
         <>
-            <HomeMainSection
+            <MainSection
                 currentUser={props.currentUser}
             />
-            <HomeThreeColumns/>
-            <HomeFourSteps/>
-            <HomeAbout/>
-            <HomeHelp/>
-            <HomeContact/>
-            <HomeFooter/>
+            <ThreeColumns/>
+            <FourSteps/>
+            <About/>
+            <Help/>
+            <Contact/>
+            <Footer/>
         </>
 
     )

@@ -2,7 +2,7 @@ import React from "react";
 import DecoratedHeader from "./DecoratedHeader";
 import LargeButton from "./LargeButton";
 
-export default function HomeFourSteps(){
+export default function FourSteps(){
     return (
         <section className="steps">
             <DecoratedHeader text={"Wystarczą 4 proste kroki"} />

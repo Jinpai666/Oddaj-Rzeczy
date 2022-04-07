@@ -2,7 +2,7 @@ import React from "react";
 import DecoratedHeader from "./DecoratedHeader";
 import LargeButton from "./LargeButton";
 
-export default function HomeMainSection(props){
+export default function MainSection(props){
     return (
         <section id="main" className="main-section">
             <div className="main-section__right-col">
