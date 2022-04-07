@@ -21,7 +21,6 @@ export default function HomeHeader(props){
 
     return (
         <nav className="header">
-            <h1>{path}</h1>
             {!props.currentUser
                 ? <div className="header__top">
                     <Link className="header__button header__button-light" to="logowanie">Zaloguj</Link>
