@@ -39,7 +39,7 @@ export default function Register(props){
         if(props.currentUser){
             navigate('/')
         }
-    }, [props.currentUser]);
+    }, [navigate, props.currentUser]);
     return (
         <section className="form">
             <form className="form__container"  onSubmit={formik.handleSubmit}>

@@ -32,7 +32,7 @@ export default function Login(props){
         if(props.currentUser){
             navigate('/')
         }
-    }, [props.currentUser]);
+    }, [navigate, props.currentUser]);
 
     return (
         <section className="form">
