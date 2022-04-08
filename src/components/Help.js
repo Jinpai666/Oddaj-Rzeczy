@@ -24,6 +24,7 @@ export default function Help(){
         }else if(clicked===strings.organisations){
             setDataJson(Organisations)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [clicked, dataJson])
 
     //paginate

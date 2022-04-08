@@ -17,6 +17,7 @@ export default function HomeHeader(props){
             props.setLoginError("")
             console.log('clear')
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [path]);
 
     return (

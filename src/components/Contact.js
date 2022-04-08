@@ -39,6 +39,7 @@ export default function Contact(){
                         email: values.email,
                         message: values.message
                     },
+                    // eslint-disable-next-line react-hooks/exhaustive-deps
                     {
                         "Content-Type": "application/json"
                     }
