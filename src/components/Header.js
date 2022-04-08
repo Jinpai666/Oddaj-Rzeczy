@@ -28,9 +28,9 @@ export default function HomeHeader(props){
                     <Link className="header__button header__button-light" to="rejestracja">Załóż Konto</Link>
                 </div>
                 : <div className="header__top">
-                    <p className="header__greeting">Cześć {props.currentUser.email}!</p>
-                    <Link className="header__button header__button-dark" to="/">Oddaj rzeczy</Link>
-                    <button className="header__logout-button" onClick={()=>{
+                    <p className="header__greeting ">Cześć {props.currentUser.email}!</p>
+                    <Link className="header__button header__button-dark " to="/">Oddaj rzeczy</Link>
+                    <button className="header__logout-button " onClick={()=>{
                         props.logout()
                     }}>Wyloguj</button>
                 </div>

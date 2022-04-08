@@ -81,7 +81,6 @@
     transition: .3s;
   }
 }
-
 @media (max-width: 800px) {
   .hidden{
     display:none;
@@ -91,6 +90,7 @@
   }
   .header {
     font-size: 1rem;
+    padding-top: 3rem;
     margin: 0;
     top: 0;
     right: 0;
@@ -100,9 +100,13 @@
     width:100%;
     position: unset;
     &__top{
-      flex-direction:column;
-      justify-content: flex-start;
-      padding: 3rem
+      width: 100%;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 0;
+    }
+    &__greeting{
+      display: none;
     }
     &__bottom{
       flex-direction: column;
@@ -112,6 +116,10 @@
       padding: 3rem;
       border-radius: 0 0 5rem  0;
       text-align: center;
+      position: absolute;
+      top: 8rem;
+      left: 0;
+      z-index: 1;
     }
     &__menu-item {
       width: 100%;
@@ -120,13 +128,13 @@
       }
     }
     &__menu-link{
-
       &:hover{
         font-weight: 600;
       }
     }
     &__button{
       height: 1.6rem;
+      justify-content: center;
     }
   }
 }
