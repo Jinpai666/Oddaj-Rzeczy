@@ -29,12 +29,11 @@ function App() {
     })
     const register = async () =>{
         try{
-            const user = await createUserWithEmailAndPassword(
+            await createUserWithEmailAndPassword(
                 auth,
                 registerEmail,
                 registerPassword
             )
-            console.log('zarejestrowano');
 
         }catch (error){
             console.log(error.message)
@@ -42,12 +41,11 @@ function App() {
     };
     const login = async () => {
         try{
-            const user = await signInWithEmailAndPassword(
+            await signInWithEmailAndPassword(
                 auth,
                 loginEmail,
                 loginPassword
             )
-            console.log('zalogowano');
 
         }catch (error){
             console.log(error.message)
@@ -56,7 +54,6 @@ function App() {
     }
     const logout = async () => {
         await signOut(auth);
-        console.log('wylogowano');
     }
 
 
