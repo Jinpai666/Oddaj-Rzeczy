@@ -86,7 +86,6 @@ function App() {
                     path="logowanie"
                     element={
                         <Login
-                            register={register}
                             setLoginEmail={setLoginEmail}
                             setLoginPassword={setLoginPassword}
                             currentUser={currentUser}

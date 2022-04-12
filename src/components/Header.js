@@ -37,11 +37,12 @@ export default function HomeHeader(props){
             }
             <ul  className={`header__bottom ${!isOpen && "hidden"}`}>
                 <li
-                    className="header__menu-item"
-                    onClick={handleClick}
+                    // className="header__menu-item"
+                    // onClick={handleClick}
                 >
                     <HashLink
-                        className="header__menu-link"
+                        onClick={handleClick}
+                        className="header__menu-link header__menu-item"
                         // activeClass="active"
                         to={"/#main"}
                         spy={"true"}
@@ -53,11 +54,12 @@ export default function HomeHeader(props){
                     </HashLink>
                 </li>
                 <li
-                    className="header__menu-item"
-                    onClick={handleClick}
+                    // className="header__menu-item"
+                    // onClick={handleClick}
                 >
                     <HashLink
-                        className="header__menu-link"
+                        onClick={handleClick}
+                        className="header__menu-link header__menu-item"
                         // activeClass="active"
                         to="/#threeCol"
                         spy={"true"}
@@ -69,11 +71,12 @@ export default function HomeHeader(props){
                     </HashLink>
                 </li>
                 <li
-                    className="header__menu-item"
-                    onClick={handleClick}
+                    // className="header__menu-item"
+                    // onClick={handleClick}
                 >
                     <HashLink
-                        className="header__menu-link"
+                        onClick={handleClick}
+                        className="header__menu-link header__menu-item"
                         // activeClass="active"
                         to="/#about-us"
                         spy={"true"}
@@ -85,11 +88,12 @@ export default function HomeHeader(props){
                     </HashLink>
                 </li>
                 <li
-                    className="header__menu-item"
-                    onClick={handleClick}
+                    // className="header__menu-item"
+                    // onClick={handleClick}
                 >
                     <HashLink
-                        className="header__menu-link"
+                        onClick={handleClick}
+                        className="header__menu-link header__menu-item"
                         // activeClass="active"
                         to="/#help"
                         spy={"true"}
@@ -101,11 +105,12 @@ export default function HomeHeader(props){
                     </HashLink>
                 </li>
                 <li
-                    className="header__menu-item"
-                    onClick={handleClick}
+                    // className="header__menu-item"
+                    // onClick={handleClick}
                 >
                     <HashLink
-                        className="header__menu-link"
+                        onClick={handleClick}
+                        className="header__menu-link header__menu-item"
                         // activeClass="active"
                         to="/#contact"
                         spy={"true"}
