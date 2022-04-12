@@ -32,20 +32,19 @@ export default function Contact(){
         //post on submit
         onSubmit: async (values) => {
             try{
-                const post = await axios.post(
+                await axios.post(
                     url,
                     {
                         name: values.name,
                         email: values.email,
                         message: values.message
                     },
-                    // eslint-disable-next-line react-hooks/exhaustive-deps
                     {
                         "Content-Type": "application/json"
                     }
                 )
                 //pytanie - jak odwrotnie to jest błąd?
-                console.log(post.data);
+                // console.log(post.data);
                 formik.resetForm();
                 setSuccess(true);
             } catch (error) {
