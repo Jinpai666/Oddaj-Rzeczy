@@ -35,12 +35,8 @@ export default function HomeHeader(props){
                     }}>Wyloguj</button>
                 </div>
             }
-            <ul  className={`header__bottom ${!isOpen && "hidden"}`}>
-                <li
-                    // className="header__menu-item"
-                    // onClick={handleClick}
-                >
-                    <HashLink
+            <div  className={`header__bottom ${!isOpen && "hidden"}`}>
+                <HashLink
                         onClick={handleClick}
                         className="header__menu-link header__menu-item"
                         // activeClass="active"
@@ -52,11 +48,6 @@ export default function HomeHeader(props){
                     >
                         Start
                     </HashLink>
-                </li>
-                <li
-                    // className="header__menu-item"
-                    // onClick={handleClick}
-                >
                     <HashLink
                         onClick={handleClick}
                         className="header__menu-link header__menu-item"
@@ -69,11 +60,6 @@ export default function HomeHeader(props){
                     >
                         O co chodzi?
                     </HashLink>
-                </li>
-                <li
-                    // className="header__menu-item"
-                    // onClick={handleClick}
-                >
                     <HashLink
                         onClick={handleClick}
                         className="header__menu-link header__menu-item"
@@ -86,11 +72,6 @@ export default function HomeHeader(props){
                     >
                         O nas
                     </HashLink>
-                </li>
-                <li
-                    // className="header__menu-item"
-                    // onClick={handleClick}
-                >
                     <HashLink
                         onClick={handleClick}
                         className="header__menu-link header__menu-item"
@@ -103,11 +84,6 @@ export default function HomeHeader(props){
                     >
                         Fundacje i organizacje
                     </HashLink>
-                </li>
-                <li
-                    // className="header__menu-item"
-                    // onClick={handleClick}
-                >
                     <HashLink
                         onClick={handleClick}
                         className="header__menu-link header__menu-item"
@@ -120,8 +96,7 @@ export default function HomeHeader(props){
                     >
                         Kontakt
                     </HashLink>
-                </li>
-            </ul>
+            </div>
             {!isOpen
                 ? <BiMenu className="burger" /*size="40px"*/ onClick={handleClick} />
                 : <CgClose className="burger" /*size="40px"*/ onClick={handleClick} />}
