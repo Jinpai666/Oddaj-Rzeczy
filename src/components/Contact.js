@@ -43,8 +43,6 @@ export default function Contact(){
                         "Content-Type": "application/json"
                     }
                 );
-                //pytanie - jak odwrotnie to jest błąd?
-                // console.log(post.data);
                 formik.resetForm();
                 setSuccess(true);
             } catch (error) {

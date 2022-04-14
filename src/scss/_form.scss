@@ -81,3 +81,19 @@
     }
   }
 }
+@media (max-width: 800px){
+  .form{
+    &__buttons{
+      justify-content:space-around;
+
+    }
+    &__button{
+      &:nth-child(1){
+        transform: unset;
+      }
+      &:nth-child(2){
+        transform: unset;
+      }
+    }
+  }
+}
