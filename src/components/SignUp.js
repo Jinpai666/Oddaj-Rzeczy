@@ -1,10 +1,27 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import DecoratedHeader from "./DecoratedHeader";
+import {createUserWithEmailAndPassword} from "firebase/auth";
+import {auth} from "../firebase";
 
 export default function Register(props){
+    const[registerEmail, setRegisterEmail] = useState("");
+    const[registerPassword, setRegisterPassword] = useState("");
+
+    const register = async () =>{
+        try{
+            await createUserWithEmailAndPassword(
+                auth,
+                registerEmail,
+                registerPassword
+            )
+
+        }catch (error){
+            console.log(error.message)
+        }
+    };
 //formik data collection
     const formik = useFormik({
         initialValues:{
@@ -30,7 +47,7 @@ export default function Register(props){
         //post on submit
         onSubmit: () => {
             console.log('rejestruje');
-            props.register();
+            register();
         },
     });
 //navigate
@@ -52,7 +69,7 @@ export default function Register(props){
                                 type="text"
                                 name="email"
                                 onChange={event => {                           formik.handleChange(event);
-                                    props.setRegisterEmail(event.target.value);
+                                    setRegisterEmail(event.target.value);
                                 }}
                                 onBlur={formik.handleBlur}
                                 value={formik.values.email}
@@ -69,7 +86,7 @@ export default function Register(props){
                                 name="password"
                                 value={formik.values.password}
                                 onChange={event => {formik.handleChange(event);
-                                    props.setRegisterPassword(event.target.value);
+                                    setRegisterPassword(event.target.value);
                                 }}
                                 onBlur={formik.handleBlur}
                                 style={formik.touched.password && formik.errors.password ? {borderColor:"red"} : null}

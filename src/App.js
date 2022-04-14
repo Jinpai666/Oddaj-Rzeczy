@@ -8,60 +8,23 @@ import ErrorPage from "./components/ErrorPage";
 import "./scss/main.scss";
 import Logout from "./components/Logout";
 import {
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
     onAuthStateChanged,
-    signOut
 } from "firebase/auth";
 import {auth} from "./firebase";
 
 function App() {
 // Firebase data
-    const[registerEmail, setRegisterEmail] = useState("");
-    const[registerPassword, setRegisterPassword] = useState("");
-    const[loginEmail, setLoginEmail] = useState("")
-    const[loginPassword, setLoginPassword] = useState("")
     const[loginError, setLoginError] = useState("");
     //user management
     const[currentUser, setCurrentUser] = useState("");
     onAuthStateChanged(auth, (currentUser) => {
         setCurrentUser(currentUser);
     })
-    const register = async () =>{
-        try{
-            await createUserWithEmailAndPassword(
-                auth,
-                registerEmail,
-                registerPassword
-            )
-
-        }catch (error){
-            console.log(error.message)
-        }
-    };
-    const login = async () => {
-        try{
-            await signInWithEmailAndPassword(
-                auth,
-                loginEmail,
-                loginPassword
-            )
-
-        }catch (error){
-            console.log(error.message)
-            setLoginError(error.message)
-        }
-    }
-    const logout = async () => {
-        await signOut(auth);
-    }
-
 
     return (
         <Router>
             <Header
                 currentUser={currentUser}
-                logout={logout}
                 setLoginError={setLoginError}
             />
             <Routes>
@@ -69,27 +32,21 @@ function App() {
                     path="/"
                     element={
                     <Home
-                        currentUser={currentUser}
+                            currentUser={currentUser}
                     />}
                 />
                 <Route
                     path="rejestracja"
                     element={
                         <SignUp
-                           register={register}
-                           setRegisterEmail={setRegisterEmail}
-                           setRegisterPassword={setRegisterPassword}
-                           currentUser={currentUser}
+                            currentUser={currentUser}
                         />}
                 />
                 <Route
                     path="logowanie"
                     element={
                         <Login
-                            setLoginEmail={setLoginEmail}
-                            setLoginPassword={setLoginPassword}
                             currentUser={currentUser}
-                            login={login}
                             loginError={loginError}
                             setLoginError={setLoginError}
                         />}

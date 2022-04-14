@@ -1,10 +1,28 @@
-import React, { useEffect } from "react";
+import React, {useEffect, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import DecoratedHeader from "./DecoratedHeader";
+import {signInWithEmailAndPassword} from "firebase/auth";
+import {auth} from "../firebase";
 
 export default function Login(props){
+//firebase
+    const[loginEmail, setLoginEmail] = useState("")
+    const[loginPassword, setLoginPassword] = useState("")
+    const login = async () => {
+        try{
+            await signInWithEmailAndPassword(
+                auth,
+                loginEmail,
+                loginPassword
+            )
+
+        }catch (error){
+            console.log(error.message)
+            props.setLoginError(error.message)
+        }
+    }
 //formik data collection
     const formik = useFormik({
         initialValues:{
@@ -22,8 +40,7 @@ export default function Login(props){
         }),
         //post on submit
         onSubmit: () => {
-            props.login();
-            console.log('loguje')
+            login();
         },
     });
 //navigate
@@ -47,7 +64,7 @@ export default function Login(props){
                                 type="text"
                                 name="email"
                                 onChange={event => {formik.handleChange(event);
-                                    props.setLoginEmail(event.target.value);
+                                    setLoginEmail(event.target.value);
                                 }}
                                 onBlur={formik.handleBlur}
                                 value={formik.values.email}
@@ -64,7 +81,7 @@ export default function Login(props){
                                 name="password"
                                 value={formik.values.password}
                                 onChange={event => {                           formik.handleChange(event);
-                                    props.setLoginPassword(event.target.value);
+                                    setLoginPassword(event.target.value);
                                 }}
                                 onBlur={formik.handleBlur}
                                 style={formik.touched.password && formik.errors.password ? {borderColor:"red"} : null}

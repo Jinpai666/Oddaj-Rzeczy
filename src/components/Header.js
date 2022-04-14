@@ -3,14 +3,15 @@ import {Link, useLocation} from "react-router-dom";
 import {HashLink} from "react-router-hash-link";
 import {BiMenu} from "react-icons/bi";
 import {CgClose} from "react-icons/cg";
+import {signOut} from "firebase/auth";
+import {auth} from "../firebase";
 
 export default function HomeHeader(props){
-    //burger menu logic
-    const [isOpen, setIsOpen] = useState(false)
-    const handleClick = () => {
-        setIsOpen(!isOpen);
+//firebase
+    const logout = async () => {
+        await signOut(auth);
     }
-    //clear login error
+//clear login error
     const path = useLocation().pathname;
     useEffect(() =>{
         if(path !== "/logowanie"){
@@ -19,7 +20,11 @@ export default function HomeHeader(props){
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [path]);
-
+//burger menu logic
+    const [isOpen, setIsOpen] = useState(false)
+    const handleClick = () => {
+        setIsOpen(!isOpen);
+    }
     return (
         <nav className="header">
             {!props.currentUser
@@ -31,7 +36,7 @@ export default function HomeHeader(props){
                     <p className="header__greeting ">Cześć {props.currentUser.email}!</p>
                     <Link className="header__button header__button-dark " to="/">Oddaj rzeczy</Link>
                     <button className="header__logout-button " onClick={()=>{
-                        props.logout()
+                        logout()
                     }}>Wyloguj</button>
                 </div>
             }
