@@ -12,6 +12,9 @@
   justify-content: center;
   text-transform: uppercase;
   background-color: $background-lighter-color;
+  &:hover{
+    background-color: $background-darker-color;
+  }
   @media (max-width: 800px) {
     font-size: 4vw;
     padding: 1.5vw 7vw;
