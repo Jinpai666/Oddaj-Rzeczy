@@ -95,6 +95,11 @@
     margin-top: 4rem;
     cursor: pointer;
     background-color: $background-lighter-color;
+    border: 1px solid $decoration-dark-color;
+    &:hover{
+      background-color: $background-darker-color;
+    }
+
   }
 }
 @media (max-width: 800px) {
