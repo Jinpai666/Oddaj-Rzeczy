@@ -1,4 +1,4 @@
-#Oddaj Rzeczy
+# Oddaj Rzeczy
 
 Give away things you don't need.
 
