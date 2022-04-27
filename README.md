@@ -7,16 +7,16 @@ You can create a new user or use test@mail.com, password: test12345.
 https://oddaj-rzeczy-mk.netlify.app/
 
 # Technologies 	:hammer_and_wrench:
-React
-Scss
-React paginate
-React router
-React router hash link
-React scroll
-Firebase
-Axios
-Formik
-Yup
+- React
+- Scss
+- React paginate
+- React router
+- React router hash link
+- React scroll
+- Firebase
+- Axios
+- Formik
+- Yup
 # Features :mega:
 - Firebase login
 - Input validation
