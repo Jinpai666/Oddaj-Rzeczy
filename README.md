@@ -1,6 +1,8 @@
 # Oddaj Rzeczy :raised_hands:
 
-Give away things you don't need.
+Webstie that let's you 
+give away things you don't need.
+You can create a new user or use test@mail.com, password: test12345.
 
 # Link to live app :globe_with_meridians:
 https://oddaj-rzeczy-mk.netlify.app/
