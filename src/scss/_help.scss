@@ -92,6 +92,7 @@
 
 @media (max-width: 950px){
   .help{
+
     &__text{
       max-width: unset;
       font-size: 1.8rem;
@@ -127,6 +128,8 @@
 
 @media (max-width: 550px) {
   .help {
+    margin-bottom: 30rem;
+
     &__detail{
       &-left{
         &-row-1{
