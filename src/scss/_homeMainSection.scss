@@ -16,6 +16,7 @@
     width: 100%;
     background-image: url("../assets/box_image.png");
     background-repeat: no-repeat;
+    background-size: contain;
   }
   &__right-col {
     display: flex;
