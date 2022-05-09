@@ -42,65 +42,60 @@ export default function HomeHeader(props){
             }
             <div  className={`header__bottom ${!isOpen && "hidden"}`}>
                 <HashLink
-                        onClick={handleClick}
-                        className="header__menu-link header__menu-item"
-                        // activeClass="active"
-                        to={"/#main"}
-                        spy={"true"}
-                        smooth={true}
-                        offset={50}
-                        duration={500}
-                    >
-                        Start
-                    </HashLink>
-                    <HashLink
-                        onClick={handleClick}
-                        className="header__menu-link header__menu-item"
-                        // activeClass="active"
-                        to="/#threeCol"
-                        spy={"true"}
-                        smooth={true}
-                        offset={50}
-                        duration={500}
-                    >
-                        O co chodzi?
-                    </HashLink>
-                    <HashLink
-                        onClick={handleClick}
-                        className="header__menu-link header__menu-item"
-                        // activeClass="active"
-                        to="/#about-us"
-                        spy={"true"}
-                        smooth={true}
-                        offset={50}
-                        duration={500}
-                    >
-                        O nas
-                    </HashLink>
-                    <HashLink
-                        onClick={handleClick}
-                        className="header__menu-link header__menu-item"
-                        // activeClass="active"
-                        to="/#help"
-                        spy={"true"}
-                        smooth={true}
-                        offset={50}
-                        duration={500}
-                    >
-                        Fundacje i organizacje
-                    </HashLink>
-                    <HashLink
-                        onClick={handleClick}
-                        className="header__menu-link header__menu-item"
-                        // activeClass="active"
-                        to="/#contact"
-                        spy={"true"}
-                        smooth={true}
-                        offset={50}
-                        duration={500}
-                    >
-                        Kontakt
-                    </HashLink>
+                    onClick={handleClick}
+                    className="header__menu-link header__menu-item"
+                    to={"/#main"}
+                    spy={"true"}
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                >
+                    Start
+                </HashLink>
+                <HashLink
+                    onClick={handleClick}
+                    className="header__menu-link header__menu-item"
+                    to="/#threeCol"
+                    spy={"true"}
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                >
+                    O co chodzi?
+                </HashLink>
+                <HashLink
+                    onClick={handleClick}
+                    className="header__menu-link header__menu-item"
+                    to="/#about-us"
+                    spy={"true"}
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                >
+                    O nas
+                </HashLink>
+                <HashLink
+                    onClick={handleClick}
+                    className="header__menu-link header__menu-item"
+                    to="/#help"
+                    spy={"true"}
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                >
+                    Fundacje i organizacje
+                </HashLink>
+                <HashLink
+                    onClick={handleClick}
+                    className="header__menu-link header__menu-item"
+                    to="/#contact"
+                    spy={"true"}
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                >
+                    Kontakt
+                </HashLink>
             </div>
             {!isOpen
                 ? <BiMenu className="burger" /*size="40px"*/ onClick={handleClick} />

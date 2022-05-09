@@ -32,27 +32,33 @@ function App() {
                     path="/"
                     element={
                     <Home
-                            currentUser={currentUser}
+                        currentUser={currentUser}
                     />}
                 />
                 <Route
                     path="rejestracja"
                     element={
-                        <SignUp
-                            currentUser={currentUser}
-                        />}
+                    <SignUp
+                        currentUser={currentUser}
+                    />}
                 />
                 <Route
                     path="logowanie"
                     element={
-                        <Login
-                            currentUser={currentUser}
-                            loginError={loginError}
-                            setLoginError={setLoginError}
-                        />}
+                    <Login
+                        currentUser={currentUser}
+                        loginError={loginError}
+                        setLoginError={setLoginError}
+                    />}
                 />
-                <Route path="*" element={<ErrorPage/>} />
-                <Route path="wylogowano" element={<Logout/>} />
+                <Route
+                    path="*"
+                    element={<ErrorPage/>}
+                />
+                <Route
+                    path="wylogowano"
+                    element={<Logout/>}
+                />
             </Routes>
         </Router>
     );

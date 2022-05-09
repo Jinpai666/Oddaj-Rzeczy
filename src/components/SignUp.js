@@ -18,7 +18,6 @@ export default function Register(props){
                 registerEmail,
                 registerPassword
             )
-
         }catch (error){
             console.log(error.message)
         }
